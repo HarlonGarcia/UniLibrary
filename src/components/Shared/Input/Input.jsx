@@ -3,7 +3,7 @@ import './Input.scss'
 
 const Input = ({placeholder, id, label}) => {
   return (
-    <div className="input">
+    <div className="field">
       <label htmlFor={id}>
         {label}
       </label>
