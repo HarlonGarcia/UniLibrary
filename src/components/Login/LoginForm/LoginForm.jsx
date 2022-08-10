@@ -1,5 +1,4 @@
 import React from 'react';
-import { AiFillGoogleCircle } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 
 import './LoginForm.scss';
@@ -8,11 +7,11 @@ import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 
 const LoginForm = () => {
   return (
-    <form className="form">
+    <form className="login_form">
       <h1>UniLibrary •</h1>
       <div className='login_inputs'>
-        <Input placeholder="Nome do usuário" id="username" label="Usuário"></Input>
-        <Input placeholder="Digite sua senha" id="password" label="Senha"></Input>
+        <Input type="text" placeholder="Nome do usuário" id="username" label="Usuário"></Input>
+        <Input type="password" placeholder="Digite sua senha" id="password" label="Senha"></Input>
       </div>
       <ButtonForm label="Entrar"></ButtonForm>
       <div id='login_divisor'>
@@ -26,7 +25,6 @@ const LoginForm = () => {
       </div>
       <h3>Não tem conta? <a>Cadastre-se!</a></h3>
     </form>
-
   )
 }
 

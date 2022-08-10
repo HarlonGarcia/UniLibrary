@@ -1,9 +1,9 @@
 import React from 'react';
 import './ButtonForm.scss';
 
-const ButtonForm = ({label}) => {
+const ButtonForm = ({label, style}) => {
   return (
-    <button className='btn'>{label}</button>
+    <button className='btn' style={style}>{label}</button>
   )
 }
 
