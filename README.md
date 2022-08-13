@@ -16,7 +16,7 @@ $ npm install / yarn install
 # Rodando a aplicação
 $ npm run dev
 ```
-Atenção: Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Atenção: Este projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 ## Tech Stack
 

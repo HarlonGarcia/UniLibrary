@@ -1,0 +1,44 @@
+@use '../../index.scss' as var;
+
+#banner {
+    height: 200px;
+    width: 100vw;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        filter: brightness(0.25);
+    }
+
+    h1 {
+        font-family: 'Sora', sans-serif;
+        position: absolute;
+        background: linear-gradient(to right, var.$orange 10%, #ffcc00 50%, var.$orange 60%);
+
+        background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+        height: 4rem;
+
+        font-size: 3.5rem;
+        font-weight: 900;
+        animation: textclip 1.5s linear infinite;
+
+    }
+
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+}
+

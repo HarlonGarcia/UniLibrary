@@ -2,7 +2,7 @@ import React from 'react';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
 import './Registration.scss'
 
-export const Registration = () => {
+const Registration = () => {
   return (
     <div className='registration'>
       <RegistrationForm></RegistrationForm>
@@ -10,3 +10,5 @@ export const Registration = () => {
     </div>
   )
 }
+
+export default Registration;

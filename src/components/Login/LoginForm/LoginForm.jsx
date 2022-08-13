@@ -1,5 +1,6 @@
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 import './LoginForm.scss';
 import Input from '../../Shared/Input/Input';
@@ -23,7 +24,7 @@ const LoginForm = () => {
         <FcGoogle size={40} color={"#262626"}/>
         <h3>Continuar com Google</h3>
       </div>
-      <h3>Não tem conta? <a>Cadastre-se!</a></h3>
+      <h3>Não tem conta? <Link to="/signup">Cadastre-se!</Link></h3>
     </form>
   )
 }
