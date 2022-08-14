@@ -9,10 +9,11 @@ import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 const LoginForm = () => {
   return (
     <form className="login_form">
+      // TODO Validação de formulário
       <h1>UniLibrary •</h1>
       <div className='login_inputs'>
-        <Input type="text" placeholder="Nome do usuário" id="username" label="Usuário"></Input>
-        <Input type="password" placeholder="Digite sua senha" id="password" label="Senha"></Input>
+        <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}} type="text" placeholder="Nome do usuário" id="username" label="Usuário"></Input>
+        <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}} type="password" placeholder="Digite sua senha" id="password" label="Senha"></Input>
       </div>
       <ButtonForm label="Entrar"></ButtonForm>
       <div id='login_divisor'>

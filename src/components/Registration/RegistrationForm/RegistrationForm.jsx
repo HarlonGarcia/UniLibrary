@@ -20,12 +20,13 @@ const RegistrationForm = () => {
 
     return (
     <form className="registration_form">
+      // TODO Validação de formulário
       <h1>Dados de cadastro</h1>
       <div className='registration_inputs'>
-        <Input type="text" placeholder="Digite seu nome de usuário" id="username" label="Nome de usuário"></Input>
-        <Input type="password" placeholder="Digite sua senha" id="password" label="Senha"></Input>
-        <Input type="email" placeholder="exemplo@universidade.com" id="institutional_email" label="Email institucional"></Input>
-        <Input type="password" placeholder="Digite sua senha" id="password-auth" label="Confirme sua senha"></Input>
+        <Input inputstyle={{height: "3.25rem"}} type="text" placeholder="Digite seu nome de usuário" id="username" label="Nome de usuário"></Input>
+        <Input inputstyle={{height: "3.25rem"}} type="password" placeholder="Digite sua senha" id="password" label="Senha"></Input>
+        <Input inputstyle={{height: "3.25rem"}} type="email" placeholder="exemplo@universidade.com" id="institutional_email" label="Email institucional"></Input>
+        <Input inputstyle={{height: "3.25rem"}} type="password" placeholder="Digite sua senha" id="password-auth" label="Confirme sua senha"></Input>
       </div>
       <div className='registration_footer'>
         <ButtonForm label="Cadastrar-se" style={customStyle}></ButtonForm>

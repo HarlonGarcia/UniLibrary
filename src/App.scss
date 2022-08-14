@@ -1,3 +1,17 @@
+@use 'index.scss' as var;
+
 * {
   box-sizing: border-box;
 }
+
+// *::-webkit-scrollbar {
+//   width: 4px;
+// }
+
+// *::-webkit-scrollbar-track {
+//   background: var.$very-dark;
+// }
+
+// *::-webkit-scrollbar-thumb {
+//   background-color: var.$light-blue;
+// }

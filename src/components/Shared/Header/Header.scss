@@ -12,20 +12,20 @@
     background-color: var.$very-dark;
 
     h1 {
-        color: #fff;
+        color: var.$light-color;
         font-family: 'Sora';
     }
     
     nav {
         > * {
-            color: #fff;
+            color: var.$light-color;
             text-decoration: none;
             padding: 0.5rem 1rem;
         }
 
         .box {
             margin: 0 .75rem;
-            border: 0.1px #fff solid;
+            border: 0.1px var.$light-color solid;
             font-size: 0.9rem;
             cursor: pointer;
         }

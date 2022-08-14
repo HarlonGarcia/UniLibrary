@@ -3,4 +3,21 @@
 #home_page {
     height: 100vh;
     width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .search {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 25px;
+
+        :first-child {
+            position: absolute;
+            padding: 0 0 20px 6px;
+            color: rgba(var.$dark-color, .8);
+        }
+    }
 }
