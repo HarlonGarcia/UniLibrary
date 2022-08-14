@@ -6,7 +6,9 @@ const Login = () => {
   return (
     <div className='login'>
       <img src="src/assets/images/library.png" alt="Library Image" id='lib_img' />
-      <LoginForm></LoginForm>
+      <div className='remaining'>
+        <LoginForm></LoginForm>
+      </div>
     </div>
   )
 }

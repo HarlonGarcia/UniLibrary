@@ -1,0 +1,38 @@
+@use '../../../index.scss' as var;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 2.5rem;
+    width: 100%;
+    padding: 2rem 2.5rem;
+
+    background-color: var.$very-dark;
+
+    h1 {
+        color: #fff;
+        font-family: 'Sora';
+    }
+    
+    nav {
+        > * {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .box {
+            margin: 0 .75rem;
+            border: 0.1px #fff solid;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+    } 
+    
+    .active {
+        color: var.$orange;
+    }
+}
+
