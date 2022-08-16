@@ -2,14 +2,15 @@
 
 #banner {
     height: 200px;
-    width: 100vw;
+    width: 100%;
     
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-
+    
     img {
+        overflow: hidden;
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -33,7 +34,6 @@
         font-size: 3.5rem;
         font-weight: 900;
         animation: textclip 1.5s linear infinite;
-
     }
 
     @keyframes textclip {

@@ -1,12 +1,12 @@
 import React from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { VscSearch } from 'react-icons/vsc'
-
 import './Home.scss';
+
+import { VscSearch } from 'react-icons/vsc'
 import Banner from '../Shared/Banner/Banner';
 import Header from '../Shared/Header/Header';
 import Input from '../Shared/Input/Input';
 import Categories from '../Categories/Categories';
+import Footer from '../Shared/Footer/Footer';
 
 const Home = () => {
   return (
@@ -19,6 +19,7 @@ const Home = () => {
         placeholder="O que está procurando?" id="search" />
       </div>
       <Categories />
+      <Footer />
     </div>
   )
 }

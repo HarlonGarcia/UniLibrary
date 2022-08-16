@@ -1,0 +1,26 @@
+@use '../../../index.scss' as var;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    bottom: 0;
+
+    height: 54px;
+    width: 100vw;
+    
+    color: var.$light-color;
+    background-color: var.$very-dark;
+
+    ul {
+        display: flex;
+
+        li {
+            font-size: .925rem;
+            cursor: pointer;
+            margin: 0 2rem;
+        }
+    }
+}
