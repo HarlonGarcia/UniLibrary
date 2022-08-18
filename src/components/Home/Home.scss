@@ -1,25 +1,73 @@
-@use '../../index.scss' as var;
+@use "../../index.scss" as var;
 
 #home_page {
-    height: 100%;
-    width: 100vw;
+  height: 100%;
+  width: 100vw;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+
+  .search {
     display: flex;
-    flex-direction: column;
     align-items: center;
 
-    overflow: hidden;
+    margin-bottom: 25px;
 
-    .search {
-        display: flex;
-        align-items: center;
-
-        margin-bottom: 25px;
-
-        :first-child {
-            position: absolute;
-            padding: 0 0 20px 6px;
-            color: rgba(var.$dark-color, .8);
-        }
+    :first-child {
+      position: absolute;
+      padding: 0 0 20px 6px;
+      color: rgba(var.$dark-color, 0.8);
     }
+
+    #search__books {
+      width: 30rem;
+      height: 2.5rem;
+      padding: 0 2.5rem;
+
+      margin-bottom: 20px;
+
+      background-color: transparent;
+      border-radius: 20px;
+      outline: none;
+      border: var.$dark-color 1.5px solid;
+    }
+  }
+
+  .line {
+    width: 100vw;
+    line-height: 1em;
+    height: 1.5em;
+
+    position: relative;
+    text-align: center;
+    
+    outline: 0;
+    border: 0;
+    color: black;
+    opacity: 0.5;
+
+    &:before {
+      content: "";
+      background: linear-gradient(to right, transparent, var.$very-dark, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 3px;
+    }
+    &:after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      color: black;
+
+      padding: 0 0.5em;
+      line-height: 1.5em;
+      color: var.$light-color;
+      background-color: var.$very-dark;
+    }
+  }
 }

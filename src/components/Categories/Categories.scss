@@ -3,6 +3,8 @@
 .categories_container {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 42.125rem;
 
     margin-bottom: 2rem;
     
@@ -13,7 +15,7 @@
     .categories {
         display: flex;
         flex-wrap: wrap;
-        
-        width: 42.125rem;
+
+        max-width: 42.125rem;
     }
 }

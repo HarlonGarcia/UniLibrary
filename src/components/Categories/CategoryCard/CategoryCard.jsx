@@ -2,8 +2,13 @@ import React from 'react';
 import './CategoryCard.scss'
 
 const CategoryCard = ({icon, label}) => {
+  
+  const handleClick = () => {
+    console.log('oi');
+  }
+
   return (
-    <div className="category">
+    <div className="category" onClick={handleClick}>
         <div className="flip-card">
             <div className="flip-card-front">
                 {icon}

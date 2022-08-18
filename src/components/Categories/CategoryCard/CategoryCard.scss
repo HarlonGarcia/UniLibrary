@@ -5,10 +5,8 @@
     perspective: 1000px;
     
     height: 7rem;
-    width: 7rem;
-    
+    min-width: 7rem; 
     cursor: pointer;
-    
     
     .flip-card {
         position: relative;
