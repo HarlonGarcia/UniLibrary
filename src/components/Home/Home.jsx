@@ -29,7 +29,7 @@ const Home = () => {
   }
 
   return (
-    <div id='home_page'>
+    <div id='home__page'>
       <Header />
       <Banner />
       <div className='search'>

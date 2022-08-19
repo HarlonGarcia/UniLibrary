@@ -5,13 +5,12 @@
     flex-direction: column;
     text-align: start;
 
-    // width: 100%;
-
     label {
         color: var.$dark-color;
         font-size: 1rem;
         margin-bottom: 0.5rem;
         font-weight: 300;
+        padding-left: 10px;
     }
     
     input {

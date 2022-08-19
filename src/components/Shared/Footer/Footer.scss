@@ -11,16 +11,18 @@
     height: 54px;
     width: 100vw;
     
-    color: var.$light-color;
     background-color: var.$very-dark;
-
-    ul {
+    
+    nav {
         display: flex;
-
-        li {
+        color: var.$light-color;
+        
+        .footer__link {
+            margin: 0 2rem;
             font-size: .925rem;
             cursor: pointer;
-            margin: 0 2rem;
+            color: var.$light-color;
+            text-decoration: none;
         }
     }
 }

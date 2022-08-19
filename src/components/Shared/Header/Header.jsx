@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
-const Header = () => {
-  const [ logged, setLogged ] = useState(false);
+const Header = ({logged}) => {
+  // const [ logged, setLogged ] = useState(false);
 
   return (
     <div className='header'>
@@ -12,8 +12,8 @@ const Header = () => {
             <NavLink end to="/"> Início </NavLink>
             <NavLink to="/sobre"> Sobre </NavLink>
             
-            { !logged && <NavLink to="signup" className="box">Cadastrar-se</NavLink> }
-            { !logged && <NavLink to="login" className="box">Fazer login</NavLink> }   
+            { !logged && <NavLink to="/signup" className="box">Cadastrar-se</NavLink> }
+            { !logged && <NavLink to="/login" className="box">Fazer login</NavLink> }   
         </nav>
     </div>
   )

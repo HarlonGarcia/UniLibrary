@@ -11,7 +11,7 @@ A ideia da UniLibrary é ser um armazém digital com livros, artigos, exercício
 $ git clone https://github.com/HarlonGarcia/UniLibrary.git && cd uniLibrary
 
 # Instalando dependências
-$ npm install / yarn install
+$ npm install
 
 # Rodando a aplicação
 $ npm run dev
