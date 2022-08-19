@@ -37,9 +37,9 @@ const icons = [
     { icon: <MdPets size={'3rem'}/>,
     label: 'Medicina Veterinária' }];
 
-const Categories = () => {
+const Categories = (props) => {
   return (
-    <div className='categories_container'>
+    <div className='categories_container' {...props}>
         <h2>Principais categorias</h2>
         <div className='categories'>
             {icons.map(({icon, label}, index) => <CategoryCard key={index} label={label} icon={icon}/>)}

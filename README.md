@@ -20,7 +20,7 @@ Atenção: Este projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md)
 
 ## Tech Stack
 
--  [React.js](https://pt-br.reactjs.org/)
--  [React-icons](https://react-icons.github.io/react-icons/)
--  [Sass](https://sass-lang.com/install)
--  [ViteJS](https://vitejs.dev/)
+- [React.js](https://pt-br.reactjs.org/)
+- [React-icons](https://react-icons.github.io/react-icons/)
+- [Sass](https://sass-lang.com/install)
+- [ViteJS](https://vitejs.dev/)

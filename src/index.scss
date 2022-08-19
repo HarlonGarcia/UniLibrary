@@ -53,12 +53,19 @@ table {
 
 $very-dark: #131313;
 $dark-color: #262626;
-$light-color: #fff;
-$light-blue: #50007f;
+$white: #fff;
+$purple: #50007f;
 $orange: #FFA500;
 $link: #4BA4F2;
 
 :root {
-    background-color: $light-color;
+    background-color: $white;
     font-family: 'Roboto', sans-serif;
+	height: 100vh;
+}
+
+
+html body {
+	height: 100vh;
+	width: 100vw;
 }

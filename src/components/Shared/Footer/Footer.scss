@@ -1,27 +1,28 @@
 @use '../../../index.scss' as var;
 
 .footer {
+    height: 54px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    position: relative;
-    bottom: 0;
-
-    height: 54px;
-    width: 100vw;
     
     background-color: var.$very-dark;
     
-    nav {
+    .footer__nav {
         display: flex;
-        color: var.$light-color;
+        color: var.$white;
         
         .footer__link {
             margin: 0 2rem;
             font-size: .925rem;
             cursor: pointer;
-            color: var.$light-color;
+            color: var.$white;
             text-decoration: none;
         }
     }

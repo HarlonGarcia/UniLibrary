@@ -20,7 +20,6 @@ const RegistrationForm = () => {
 
     return (
     <form className="registration_form">
-      // TODO Validação de formulário
       <h1>Dados de cadastro</h1>
       <div className='registration_inputs'>
         <Input inputstyle={{height: "3.25rem"}} type="text" placeholder="Digite seu nome de usuário" id="username" label="Nome de usuário"></Input>

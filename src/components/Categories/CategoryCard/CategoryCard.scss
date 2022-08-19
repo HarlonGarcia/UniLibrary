@@ -41,8 +41,8 @@
     }
 
     .flip-card-back {
-        background-color: var.$light-blue;
-        color: white;
+        background-color: var.$purple;
+        color: var.$white;
         transform: rotateY(180deg);
 
         padding: .8rem;

@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 
 const Header = ({logged}) => {
-  // const [ logged, setLogged ] = useState(false);
-
   return (
     <div className='header'>
-        <h1>UniLibrary •</h1>
-        <nav>
+        <Link to="/" end className='header__home'>UniLibrary •</Link>
+        <nav className='header__nav'>
             <NavLink end to="/"> Início </NavLink>
             <NavLink to="/sobre"> Sobre </NavLink>
             

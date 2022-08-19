@@ -7,7 +7,7 @@ const Input = ({type, placeholder, id, label, inputstyle, fieldstyle}) => {
       <label htmlFor={id}>
         {label}
       </label>
-      <input style={inputstyle} type={type} id={id} placeholder={placeholder}></input>
+      <input style={inputstyle} name={id} type={type} id={id} placeholder={placeholder}></input>
     </div>
   )
 }

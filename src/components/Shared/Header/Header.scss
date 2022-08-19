@@ -11,21 +11,22 @@
 
     background-color: var.$very-dark;
 
-    h1 {
-        color: var.$light-color;
+    .header__home {
+        color: var.$white;
         font-family: 'Sora';
+        text-decoration: none;
     }
     
-    nav {
+    .header__nav {
         > * {
-            color: var.$light-color;
+            color: var.$white;
             text-decoration: none;
             padding: 0.5rem 1rem;
         }
 
         .box {
             margin: 0 .75rem;
-            border: 0.1px var.$light-color solid;
+            border: 0.1px var.$white solid;
             font-size: 0.9rem;
             cursor: pointer;
         }
