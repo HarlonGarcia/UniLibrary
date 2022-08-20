@@ -4,8 +4,8 @@ const Loading = ({ width, height, background, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      style={{margin: 'auto', borderRadius: '50%', background, display: 'block', 
-      shapeRendering: 'auto', margin: '2rem 0'}}
+      style={{margin: '2rem auto', borderRadius: '50%', background, display: 'block', 
+      shapeRendering: 'auto'}}
       width={width}
       height={height}
       viewBox="0 0 100 100"

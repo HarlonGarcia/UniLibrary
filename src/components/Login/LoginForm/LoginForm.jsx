@@ -1,22 +1,39 @@
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import useForm from '../../../hooks/useForm';
 
 import './LoginForm.scss';
 import Input from '../../Shared/Input/Input';
 import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 
 const LoginForm = () => {
+  const username = useForm('username');
+  const password = useForm('password');
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    if (username.validate() && password.validate()) {
+      console.log('Passou');
+    } else {
+      console.log('Não passou');
+    }
+  }
+
   return (
-    <form className="login_form">
+    <form className="login_form" onSubmit={handleSubmit}>
       <h1>UniLibrary •</h1>
       <div className='login_inputs'>
         <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}}
-        type="text" placeholder="Nome do usuário" id="username" label="Usuário" />
+        type="text" placeholder="Nome do usuário" id="username" label="Usuário"
+        {...username} />
+
         <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}} 
-        type="password" placeholder="Digite sua senha" id="password" label="Senha" />
+        type="password" placeholder="Digite sua senha" id="password" label="Senha"
+        {...password} />
       </div>
-      <ButtonForm label="Entrar"></ButtonForm>
+      <ButtonForm type='submit' label="Entrar"></ButtonForm>
       <div id='login_divisor'>
         <hr />
         <div> OU </div>

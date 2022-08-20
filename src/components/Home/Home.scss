@@ -24,7 +24,7 @@
       color: rgba(var.$dark-color, 0.8);
     }
 
-    #search__books {
+    #search__input {
       width: 30rem;
       height: 2.5rem;
       padding: 0 2.5rem;
@@ -33,6 +33,10 @@
       border-radius: 20px;
       outline: none;
       border: var.$dark-color 1.5px solid;
+
+      &::placeholder {
+        color: rgba(var.$very-dark, .6);
+      }
     }
   }
 
@@ -48,7 +52,7 @@
     outline: 0;
     border: 0;
     color: var.$very-dark;
-    opacity: 0.5;
+    opacity: .7;
 
     &:before {
       content: "";

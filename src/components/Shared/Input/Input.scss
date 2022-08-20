@@ -12,14 +12,42 @@
         font-weight: 300;
         padding-left: 10px;
     }
+
+    .hide__input {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .hide {
+            position: absolute;
+
+            > * {
+                margin: 20px; 
+                margin-bottom: 35px;
+
+                color: rgba(var.$very-dark, .7);
+                cursor: pointer;
+            }
+        }
+
+        .form__input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 20px;
+        
+            background-color: transparent;
+            border-radius: 20px;
+            outline: none;
+            border: var.$dark-color 1.5px solid;
+        }
+    }
     
-    input {
-        padding: 0.75rem;
-        margin-bottom: 20px;
-    
-        background-color: transparent;
-        border-radius: 20px;
-        outline: none;
-        border: var.$dark-color 1.5px solid;
+
+    .message__error {
+        position: absolute;
+        padding-left: 10.75rem;
+        padding-top: .15rem;
+        font-size: .8rem;
+        color: rgba(#f00, .8);
     }
 }

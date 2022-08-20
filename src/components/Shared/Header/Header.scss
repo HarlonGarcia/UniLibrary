@@ -29,6 +29,12 @@
             border: 0.1px var.$white solid;
             font-size: 0.9rem;
             cursor: pointer;
+            transition: all .4s;
+            
+            &:hover {
+                color: var.$very-dark;
+                background-color: var.$white;
+            }
         }
     } 
     

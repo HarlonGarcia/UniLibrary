@@ -36,12 +36,13 @@ const Home = () => {
       <Header />
       <Banner />
       <div className='search'>
-        <VscSearch size={"3.5rem"} style={{ paddingTop: '1.2rem', paddingRight: '1rem' }} />
-        <input type="text" placeholder="O que está procurando?" id="search__books" 
+        <VscSearch size={"3.5rem"} style={{ paddingTop: '1.25rem', paddingRight: '1rem', cursor: 'pointer' }} 
+        onClick={searchBook} />
+        <input type="text" placeholder="O que está procurando?" id="search__input" 
         onChange={handleChange} onKeyPress={searchBook} />
       </div>
       {!books && !load && <Categories style={{ marginBottom: '1rem'}} /> }
-      {books && <hr className='line' data-content="RESULTADOS"/>}
+      {books && <hr className='line' data-content="Resultados da pesquisa"/>}
       {load && <Loading width={50} background={'rgba(0, 0, 0, .025)'} color='#50007F'/>}
       {!load && <Books data={books}/>}
       <Footer />
