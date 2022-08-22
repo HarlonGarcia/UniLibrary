@@ -18,10 +18,18 @@
     }
     
     .header__nav {
+        display: flex;
+        align-items: center;
+
         > * {
+            max-height: 2.125rem;
             color: var.$white;
             text-decoration: none;
             padding: 0.5rem 1rem;
+
+            &:hover {
+                color: var.$orange;
+            }
         }
 
         .box {
@@ -37,9 +45,5 @@
             }
         }
     } 
-    
-    .active {
-        color: var.$orange;
-    }
 }
 

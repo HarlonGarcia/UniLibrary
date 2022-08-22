@@ -1,0 +1,56 @@
+@use '../../../index.scss' as var;
+
+.dropbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+
+    .label {
+        margin: 0 auto;
+        display: inline-block;
+        position: relative;
+    }
+
+    .label:hover {
+        cursor: pointer;
+        color: rgba(var.$orange, .4);
+    }
+
+    .dropdown {
+        visibility: hidden;
+        opacity: 0;
+        left: -10px;
+        position: absolute;
+        display: none;
+        background: var.$very-dark;
+        border-radius: 5px;
+        margin-top: .1rem;
+
+        .item {
+            color: var.$orange;
+            clear: both;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 20px;
+            border: none;
+            margin-left: 1rem;
+
+            &:hover {
+                padding-left: .6rem;
+                border-left: 2px solid var.$link;
+                transition: all 300ms ease;
+                color: var.$link;
+            }
+        }
+    }
+
+    .label:hover > ul, 
+    .label ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        min-width: 108px;
+        padding-top: 20px;
+    }
+}

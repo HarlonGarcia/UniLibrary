@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './Header.scss';
+import Dropbox from '../Dropbox/Dropbox';
+import style from './Header.module.scss';
 
 const Header = ({logged}) => {
   return (
-    <div className='header'>
-        <Link to="/" className='header__home'>UniLibrary •</Link>
-        <nav className='header__nav'>
+    <div className={style.header}>
+        <Link to="/" className={style.header__home}>UniLibrary •</Link>
+        <nav className={style.header__nav}>
             <NavLink end to="/"> Início </NavLink>
-            <NavLink to="/sobre"> Sobre </NavLink>
+            <Dropbox />
             
-            { !logged && <NavLink to="/signup" className="box signup__box">Cadastrar-se</NavLink> }
-            { !logged && <NavLink to="/login" className="box">Fazer login</NavLink> }   
+            { !logged && <NavLink to="/signup" className={style.box}>Cadastrar-se</NavLink> }
+            { !logged && <NavLink to="/login" className={style.box}>Fazer login</NavLink> }   
         </nav>
     </div>
   )
