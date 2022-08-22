@@ -8,7 +8,7 @@
     min-width: 7rem; 
     cursor: pointer;
     
-    .flip-card {
+    .flip__card {
         position: relative;
         width: 100%;
         height: 100%;
@@ -19,11 +19,11 @@
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
     }
 
-    .category:hover, .flip-card:hover {
+    .category:hover, .flip__card:hover {
         transform: rotateY(180deg);
     }
     
-    .flip-card-front, .flip-card-back {
+    .flip__card__front, .flip__card__back {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,12 +35,12 @@
         backface-visibility: hidden;
     }
 
-    .flip-card-front {
+    .flip__card__front {
         background-color: var.$orange;
         color: black;
     }
 
-    .flip-card-back {
+    .flip__card__back {
         background-color: var.$purple;
         color: var.$white;
         transform: rotateY(180deg);

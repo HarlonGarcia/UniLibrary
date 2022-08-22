@@ -1,8 +1,6 @@
 import React from 'react';
-import './Pagination.scss';
-import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
-import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill, BsFillArrowLeftSquareFill
-, BsFillArrowRightSquareFill } from 'react-icons/bs'
+import styles from './Pagination.module.scss';
+import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs'
 
 const Pagination = ({current, max, handleClick}) => {
     const iconStyle = {
@@ -11,7 +9,7 @@ const Pagination = ({current, max, handleClick}) => {
     }
 
   return (
-    <div className='pagination'>
+    <div className={styles.pagination}>
         {current > 0 ? 
         <button id='prev' onClick={handleClick}><BsFillArrowLeftSquareFill size={iconStyle.width}/></button> : 
         <button><BsFillArrowLeftSquareFill style={{cursor: 'default'}} 

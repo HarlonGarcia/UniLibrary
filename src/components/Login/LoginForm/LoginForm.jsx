@@ -2,8 +2,7 @@ import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import useForm from '../../../hooks/useForm';
-
-import './LoginForm.scss';
+import styles from './LoginForm.module.scss';
 import Input from '../../Shared/Input/Input';
 import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 
@@ -22,9 +21,9 @@ const LoginForm = () => {
   }
 
   return (
-    <form className="login_form" onSubmit={handleSubmit}>
+    <form className={styles.login__form} onSubmit={handleSubmit}>
       <h1>UniLibrary •</h1>
-      <div className='login_inputs'>
+      <div className={styles.login__inputs}>
         <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}}
         type="text" placeholder="Nome do usuário" id="username" label="Usuário"
         {...username} />
@@ -34,12 +33,12 @@ const LoginForm = () => {
         {...password} />
       </div>
       <ButtonForm type='submit' label="Entrar"></ButtonForm>
-      <div id='login_divisor'>
+      <div id={styles.login__divisor}>
         <hr />
         <div> OU </div>
         <hr />
       </div>
-      <div id='login_options'>
+      <div id={styles.login__options}>
         <FcGoogle size={40} color={"#262626"}/>
         <h3>Continuar com Google</h3>
       </div>

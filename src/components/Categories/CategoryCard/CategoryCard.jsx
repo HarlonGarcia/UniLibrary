@@ -1,5 +1,5 @@
 import React from 'react';
-import './CategoryCard.scss'
+import styles from './CategoryCard.module.scss'
 
 const CategoryCard = ({icon, label}) => {
   
@@ -8,12 +8,12 @@ const CategoryCard = ({icon, label}) => {
   }
 
   return (
-    <div className="category" onClick={handleClick}>
-        <div className="flip-card">
-            <div className="flip-card-front">
+    <div className={styles.category} onClick={handleClick}>
+        <div className={styles.flip__card}>
+            <div className={styles.flip__card__front}>
                 {icon}
             </div>
-            <div className="flip-card-back">
+            <div className={styles.flip__card__back}>
                 <h4>{label}</h4>
             </div>
         </div>

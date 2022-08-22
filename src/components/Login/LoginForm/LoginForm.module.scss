@@ -1,6 +1,6 @@
 @use '../../../index.scss' as var;
 
-.login_form {
+.login__form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
         font-family: 'Sora', sans-serif;
     }
 
-    .login_inputs {
+    .login__inputs {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -25,7 +25,7 @@
         margin-bottom: 25px;
     }
 
-    #login_divisor {
+    #login__divisor {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -43,7 +43,7 @@
         }
     }
 
-    #login_options {
+    #login__options {
         display: flex;
         align-items: center;
         

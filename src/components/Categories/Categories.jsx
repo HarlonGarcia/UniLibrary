@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryCard from './CategoryCard/CategoryCard';
-import './Categories.scss';
+import styles from './Categories.module.scss';
 
 import { SiAtom } from 'react-icons/si';
 import { VscLaw } from 'react-icons/vsc';
@@ -39,9 +39,9 @@ const icons = [
 
 const Categories = (props) => {
   return (
-    <div className='categories_container' {...props}>
+    <div className={styles.categories_container} {...props}>
         <h2>Principais categorias</h2>
-        <div className='categories'>
+        <div className={styles.categories}>
             {icons.map(({icon, label}, index) => <CategoryCard key={index} label={label} icon={icon}/>)}
         </div>
     </div>

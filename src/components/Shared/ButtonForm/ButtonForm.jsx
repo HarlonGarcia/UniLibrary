@@ -1,9 +1,9 @@
 import React from 'react';
-import './ButtonForm.scss';
+import styles from './ButtonForm.module.scss';
 
 const ButtonForm = ({type, label, style}) => {
   return (
-    <button className='btn' type={type} style={style}>{label}</button>
+    <button className={styles.btn} type={type} style={style}>{label}</button>
   )
 }
 

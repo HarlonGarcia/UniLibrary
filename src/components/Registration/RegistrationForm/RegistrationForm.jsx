@@ -1,5 +1,5 @@
 import React from 'react';
-import './RegistrationForm.scss';
+import styles from './RegistrationForm.module.scss';
 import Input from '../../Shared/Input/Input';
 import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md'
@@ -30,9 +30,9 @@ const RegistrationForm = () => {
     };
 
     return (
-    <form className="registration_form" onSubmit={handleSubmit}>
+    <form className={styles.registration__form} onSubmit={handleSubmit}>
       <h1>Dados de cadastro</h1>
-      <div className='registration_inputs'>
+      <div className={styles.registration__inputs}>
         <Input inputstyle={{height: "3.25rem"}} type="text" 
         placeholder="Digite seu nome de usuário" id="username" 
         label="Nome de usuário" {...username} ></Input>
@@ -49,9 +49,9 @@ const RegistrationForm = () => {
         placeholder="Digite sua senha" id="authorization" 
         label="Confirme sua senha" {...authorization} ></Input>
       </div>
-      <div className='registration_footer'>
+      <div className={styles.registration__footer}>
         <ButtonForm type='submit' label="Cadastrar-se" style={customStyle}></ButtonForm>
-        <div id='service_terms'>
+        <div id={styles.service__terms}>
             <span onClick={() => setAccepted(!accepted)}>
               {accepted ? <MdCheckBox size={22}/> : <MdCheckBoxOutlineBlank size={22}/> }
             </span>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import style from './Home.module.scss';
+import styles from './Home.module.scss';
 import { VscSearch } from 'react-icons/vsc'
 
 import Books from '../Books/Books'
@@ -44,17 +44,17 @@ const Home = () => {
   }
 
   return (
-    <div id={style.home__page}>
+    <div id={styles.home__page}>
       <Header />
       <Banner />
-      <div className={style.search}>
+      <div className={styles.search}>
         <VscSearch size={"3.5rem"} style={{ paddingTop: '1.25rem', paddingRight: '1rem', cursor: 'pointer' }} 
         onClick={searchBook} />
-        <input type="text" placeholder="O que está procurando?" id={style.search__input}
+        <input type="text" placeholder="O que está procurando?" id={styles.search__input}
         onChange={handleChange} onKeyPress={searchBook} />
       </div>
       {!books && !load && <Categories style={{ marginBottom: '1rem'}} /> }
-      {books && <hr className={style.line} data-content="Resultados da pesquisa"/>}
+      {books && <hr className={styles.line} data-content="Resultados da pesquisa"/>}
       
       {load && <Loading width={50} background={'rgba(0, 0, 0, .025)'} color='#50007F'/>}
       {!load && <Books data={books}/>}

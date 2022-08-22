@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "./Input.module.scss";
+import styles from "./Input.module.scss";
 import { GoEyeClosed, GoEye } from 'react-icons/go'
 
 const Input = ({
@@ -23,15 +23,15 @@ const Input = ({
   }
 
   return (
-    <div style={fieldstyle} className={style.field}>
+    <div style={fieldstyle} className={styles.field}>
       <label htmlFor={id}>{label}</label>
-      <div className={style.hide__input}>
+      <div className={styles.hide__input}>
         {(id === 'password' || id === 'authorization') && <span onClick={handleClick} 
-        className={style.hide}>
+        className={styles.hide}>
           {hide ? <GoEyeClosed/> : <GoEye />}</span>}
         
         <input 
-          className={style.form__input}
+          className={styles.form__input}
           style={inputstyle}
           name={id}
           type={(id === 'password' || id === 'authorization') ? passwordType : type}
@@ -42,7 +42,7 @@ const Input = ({
           onBlur={onBlur}
         ></input>
       </div>
-      {error && <p className={style.message__error}>{error}</p>}
+      {error && <p className={styles.message__error}>{error}</p>}
     </div>
   );
 };

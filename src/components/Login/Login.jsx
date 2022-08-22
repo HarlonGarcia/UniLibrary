@@ -1,16 +1,16 @@
-import React from 'react'
-import LoginForm from './LoginForm/LoginForm'
-import './Login.scss'
+import React from 'react';
+import LoginForm from './LoginForm/LoginForm';
+import styles from './Login.module.scss';
 
 const Login = () => {
   return (
-    <div className='login'>
-      <img src="src/assets/images/library.png" alt="Library Image" id='lib_img' />
-      <div className='remaining'>
+    <div className={styles.login}>
+      <img src="src/assets/images/library.png" alt="Library Image" className={styles.lib_img} />
+      <div className={styles.remaining}>
         <LoginForm></LoginForm>
       </div>
     </div>
   )
 }
 
-export default Login
+export default Login;

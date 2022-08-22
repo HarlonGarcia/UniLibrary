@@ -1,17 +1,16 @@
 import React from 'react';
-import style from './Dropbox.module.scss';
-import { IoIosArrowDown } from 'react-icons/io'
+import styles from './Dropbox.module.scss';
 
 const Dropbox = () => {
   return (
-    <ul className={style.dropbox}>
-        <li className={style.label}>
+    <ul className={styles.dropbox}>
+        <li className={styles.label}>
             Categorias ▾
-            <ul className={style.dropdown}>
-                <li className={style.item}>Artigos</li>
-                <li className={style.item}>Livros</li>
-                <li className={style.item}>Revistas</li>
-                <li className={style.item}>Outros</li>
+            <ul className={styles.dropdown}>
+                <li className={styles.item}>Artigos</li>
+                <li className={styles.item}>Livros</li>
+                <li className={styles.item}>Revistas</li>
+                <li className={styles.item}>Outros</li>
             </ul>
         </li>
     </ul>
