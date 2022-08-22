@@ -6,6 +6,7 @@ import { TbBookOff } from 'react-icons/tb'
 const Book = ({title, image}) => {
     let thumbnail = image && image.thumbnail;
   
+    if (!thumbnail) return null;
     return (
     <div className='book__card'>
       <h2 className='book__title'>{title || 'Sem título'}</h2>

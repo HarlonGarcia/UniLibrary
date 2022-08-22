@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Books.scss'
 import Book from './Book/Book'
 

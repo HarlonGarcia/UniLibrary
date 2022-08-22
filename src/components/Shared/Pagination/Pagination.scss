@@ -1,0 +1,27 @@
+@use '../../../index.scss' as var;
+
+.pagination {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3rem;
+
+    > button {
+        cursor: pointer;
+        padding: 0;
+        outline: none;
+        border: none;
+        background: transparent;
+    }
+
+    > * {
+        font-family: 'Sora', 'Roboto', sans-serif;
+        color: var.$dark-color;
+        font-size: 1rem;
+        font-weight: 900;
+        margin: 0 12px;
+
+        > span {
+            color: var.$purple;
+        }
+    }
+}
