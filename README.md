@@ -1,6 +1,6 @@
 # [UniLibrary]()
 
-A ideia da UniLibrary é ser um armazém digital com livros, artigos, exercícios e outros tipos de conteúdo para estudantes de universidades do Brasil, onde o estudante pode compartilhar um material próprio e também estudar por outros materiais.
+A ideia da UniLibrary é ser um armazém digital com livros, artigos e outros tipos de conteúdos para estudantes de universidades do Brasil, onde o estudante pode compartilhar um material próprio e também estudar por outros materiais.
 
 (Projeto em andamento)
 

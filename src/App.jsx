@@ -7,6 +7,7 @@ import Registration from './components/Registration/Registration';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Support from './components/Support/Support';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="login" element={ <Login /> } />
         <Route path="sobre" element={ <About /> } />     
         <Route path="contact" element={ <Contact /> } />
+        <Route path="support" element={ <Support /> } />
       </Routes>
     </BrowserRouter>
   )
