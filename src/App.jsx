@@ -8,18 +8,21 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Support from './components/Support/Support';
+import { LayoutGroup } from 'framer-motion';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <Home /> } />
-        <Route path="signup" element={ <Registration /> } />
-        <Route path="login" element={ <Login /> } />
-        <Route path="sobre" element={ <About /> } />     
-        <Route path="contact" element={ <Contact /> } />
-        <Route path="support" element={ <Support /> } />
-      </Routes>
+      <LayoutGroup id='global'>
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="signup" element={ <Registration /> } />
+          <Route path="login" element={ <Login /> } />
+          <Route path="sobre" element={ <About /> } />     
+          <Route path="contact" element={ <Contact /> } />
+          <Route path="support" element={ <Support /> } />
+        </Routes>
+      </LayoutGroup>
     </BrowserRouter>
   )
 }

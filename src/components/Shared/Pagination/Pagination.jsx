@@ -15,7 +15,7 @@ const Pagination = ({current, max, handleClick}) => {
         <button><BsFillArrowLeftSquareFill style={{cursor: 'default'}} 
         size={iconStyle.width} color={iconStyle.color}/></button> }
         
-        <p><span>{current}</span> / {max}</p>
+        <p><span>{current+1}</span> / {max}</p>
         
         {current < max ? 
         <button id='next' onClick={handleClick}><BsFillArrowRightSquareFill size={iconStyle.width}/></button> : 
