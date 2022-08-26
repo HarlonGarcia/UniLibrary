@@ -7,12 +7,19 @@ import { MdCheckBox } from 'react-icons/md'
 import { useState } from 'react';
 import useForm from '../../../hooks/useForm';
 
+import { signInWithGooglePopup, createUserDoc } from '../../../utils/firebase/firebase';
+
 const RegistrationForm = () => {
     const [ accepted, setAccepted ] = useState(false);
     const username = useForm('username')
     const email = useForm('email');
     const password = useForm('password');
     const authorization = useForm('password');
+
+    const logWithGoogle = async () => {
+      const {user} = await signInWithGooglePopup();
+      const userDocRef = await createUserDoc(user);
+    }
 
     const handleSubmit = (event) => {
       event.preventDefault()
@@ -50,7 +57,7 @@ const RegistrationForm = () => {
         label="Confirme sua senha" {...authorization} ></Input>
       </div>
       <div className={styles.registration__footer}>
-        <ButtonForm type='submit' label="Cadastrar-se" style={customStyle}></ButtonForm>
+        <ButtonForm onClick={logWithGoogle} type='submit' label="Cadastrar-se" style={customStyle} />
         <div id={styles.service__terms}>
             <span onClick={() => setAccepted(!accepted)}>
               {accepted ? <MdCheckBox size={22}/> : <MdCheckBoxOutlineBlank size={22}/> }

@@ -4,7 +4,6 @@ import Book from './Book/Book';
 import { motion } from "framer-motion";
 
 const Books = ({data}) => {
-
   const bookItem = {
     hidden: { y: 20, opacity: 0 },
     visible: {
