@@ -13,7 +13,7 @@ $ git clone https://github.com/HarlonGarcia/UniLibrary.git && cd uniLibrary
 # Instalando dependências
 $ npm install
 
-# Rodando a aplicação
+# Rodando a aplicação no seu computador
 $ npm run dev
 ```
 Atenção: Este projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
@@ -24,3 +24,5 @@ Atenção: Este projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md)
 - [React-icons](https://react-icons.github.io/react-icons/)
 - [Sass](https://sass-lang.com/install)
 - [ViteJS](https://vitejs.dev/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Firebase](https://firebase.google.com/)
