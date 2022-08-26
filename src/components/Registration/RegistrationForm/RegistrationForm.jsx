@@ -1,12 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import styles from './RegistrationForm.module.scss';
+
+import useForm from '../../../hooks/useForm';
 import Input from '../../Shared/Input/Input';
 import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
-import { MdCheckBoxOutlineBlank } from 'react-icons/md'
-import { MdCheckBox } from 'react-icons/md'
-import { useState } from 'react';
-import useForm from '../../../hooks/useForm';
 
+import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
+import { FcGoogle } from 'react-icons/fc';
 import { signInWithGooglePopup, createUserDoc } from '../../../utils/firebase/firebase';
 
 const RegistrationForm = () => {
@@ -31,9 +32,18 @@ const RegistrationForm = () => {
       }
     }
 
-    const customStyle = {
+    const buttons = {
+      default: {
         width: "18rem",
         margin: "0 2rem 0 0"
+      },
+      google: {
+        width: "18rem",
+        margin: "0 2rem 0 0",
+        backgroundColor: "transparent",
+        color: "#222",
+        border: "1px solid #222",
+      }
     };
 
     return (
@@ -56,8 +66,12 @@ const RegistrationForm = () => {
         placeholder="Digite sua senha" id="authorization" 
         label="Confirme sua senha" {...authorization} ></Input>
       </div>
-      <div className={styles.registration__footer}>
-        <ButtonForm onClick={logWithGoogle} type='submit' label="Cadastrar-se" style={customStyle} />
+      <div className={styles.footer__container}>
+        <div className={styles.registration__footer}>
+          <ButtonForm type='submit' label="Cadastrar-se" style={buttons.default} />
+          <ButtonForm onClick={logWithGoogle} icon={<FcGoogle size='2rem' />} 
+          label="Entrar com o Google" style={buttons.google}  />
+        </div>
         <div id={styles.service__terms}>
             <span onClick={() => setAccepted(!accepted)}>
               {accepted ? <MdCheckBox size={22}/> : <MdCheckBoxOutlineBlank size={22}/> }

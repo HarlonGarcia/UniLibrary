@@ -1,6 +1,10 @@
 @use '../../../index.scss' as var;
 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: var.$dark-color;
     color: var.$white;
     border-radius: 20px;
@@ -16,5 +20,9 @@
 
     &:hover {
         background-color: #000;
+    }
+
+    > span {
+        margin: 20px;
     }
 }
