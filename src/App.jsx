@@ -7,7 +7,7 @@ import Registration from './components/Registration/Registration';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
-import Support from './components/Support/Support';
+import HelpAndSupport from './components/HelpAndSupport/HelpAndSupport';
 import { LayoutGroup } from 'framer-motion';
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="login" element={ <Login /> } />
           <Route path="sobre" element={ <About /> } />     
           <Route path="contact" element={ <Contact /> } />
-          <Route path="support" element={ <Support /> } />
+          <Route path="support" element={ <HelpAndSupport /> } />
         </Routes>
       </LayoutGroup>
     </BrowserRouter>

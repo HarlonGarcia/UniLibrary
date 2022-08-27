@@ -47,6 +47,7 @@
         display: flex;
         align-items: center;
         
+        cursor: pointer;
         margin-bottom: 20px;
 
         h3 {
@@ -62,7 +63,10 @@
         a {
             font-weight: 600;
             color: var.$link;
-            text-decoration: none;
+
+            &:hover {
+                color: var.$purple;
+            }
         }
     }
 }

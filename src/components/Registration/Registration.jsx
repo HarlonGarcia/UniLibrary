@@ -8,7 +8,7 @@ const Registration = () => {
       <div className={styles.remaining_signup}>
         <RegistrationForm></RegistrationForm>
       </div>
-      <img src="src/assets/images/library.png" alt="Library Image" id='lib_img' />
+      <img src="src/assets/images/library.png" alt="Library Image" className={styles.image} />
     </div>
   )
 }

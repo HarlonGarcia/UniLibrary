@@ -8,27 +8,35 @@ import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 
 import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 import { FcGoogle } from 'react-icons/fc';
-import { signInWithGooglePopup, createUserDoc } from '../../../utils/firebase/firebase';
+
+import { createUserByEmailAndPassword, createUserDoc } from '../../../utils/firebase/firebase';
 
 const RegistrationForm = () => {
     const [ accepted, setAccepted ] = useState(false);
     const username = useForm('username')
     const email = useForm('email');
     const password = useForm('password');
-    const authorization = useForm('password');
+    const confirmPassword = useForm('password');
 
-    const logWithGoogle = async () => {
-      const {user} = await signInWithGooglePopup();
-      const userDocRef = await createUserDoc(user);
-    }
-
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
       event.preventDefault()
 
-      if (username.validate() && email.validate() && password.validate() && authorization.validate()) {
-        console.log('Passou');
+      if (!username.validate() || !email.validate() || !password.validate() || !confirmPassword.validate()) {
+        alert('Invalid information');
+        return;
+      } else if (password.value !== confirmPassword.value) {
+        alert('Password mismatch')
+        return;
       } else {
-        console.log('Não passou');
+        try {
+          const { user } = await createUserByEmailAndPassword(email.value, password.value)
+          const response = await createUserDoc(user, { displayName: username.value });
+          console.log(response);
+        } catch (error) {
+          
+          error.code === 'auth/email-already-in-use' ? alert('Email already in use') :
+          console.log('Encountered an error while user creation: ', error);
+        }
       }
     }
 
@@ -36,13 +44,6 @@ const RegistrationForm = () => {
       default: {
         width: "18rem",
         margin: "0 2rem 0 0"
-      },
-      google: {
-        width: "18rem",
-        margin: "0 2rem 0 0",
-        backgroundColor: "transparent",
-        color: "#222",
-        border: "1px solid #222",
       }
     };
 
@@ -64,13 +65,13 @@ const RegistrationForm = () => {
 
         <Input inputstyle={{height: "3.25rem"}} type="password" 
         placeholder="Digite sua senha" id="authorization" 
-        label="Confirme sua senha" {...authorization} ></Input>
+        label="Confirme sua senha" {...confirmPassword} ></Input>
       </div>
       <div className={styles.footer__container}>
         <div className={styles.registration__footer}>
           <ButtonForm type='submit' label="Cadastrar-se" style={buttons.default} />
-          <ButtonForm onClick={logWithGoogle} icon={<FcGoogle size='2rem' />} 
-          label="Entrar com o Google" style={buttons.google}  />
+          <ButtonForm googleStyle={true} onClick={() => console.log('oi')} icon={<FcGoogle size='2rem' />} 
+          label="Entrar com o Google" style={buttons.default}  />
         </div>
         <div id={styles.service__terms}>
             <span onClick={() => setAccepted(!accepted)}>

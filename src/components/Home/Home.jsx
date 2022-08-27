@@ -35,7 +35,7 @@ const Home = () => {
   const searchBook = async (event) => {
     if ((event && event.key === 'Enter') || search) {
       setLoad(true)
-      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=${maxResults}&startIndex=${offset}&key=AIzaSyDg5Semzv0U9jO9VSBE2xkOMMoE3YmQhTI`);
+      const response = await fetch(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes?q=${search}&maxResults=${maxResults}&startIndex=${offset}&key=${import.meta.env.VITE_APP_GOOGLE_API_KEY}`);
       const json = await response.json();
       setBooks(json.items);
 

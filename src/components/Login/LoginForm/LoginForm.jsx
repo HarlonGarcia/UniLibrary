@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import styles from './LoginForm.module.scss';
+
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import useForm from '../../../hooks/useForm';
-import styles from './LoginForm.module.scss';
 import Input from '../../Shared/Input/Input';
 import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
+
+import { signInWithGooglePopup, createUserDoc } from '../../../utils/firebase/firebase';
 
 const LoginForm = () => {
   const username = useForm('username');
   const password = useForm('password');
+
+  const loginWithGoogle = async () => {
+    const {user} = await signInWithGooglePopup();
+    const userDocRef = await createUserDoc(user);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -38,7 +46,7 @@ const LoginForm = () => {
         <div> OU </div>
         <hr />
       </div>
-      <div id={styles.login__options}>
+      <div onClick={loginWithGoogle} id={styles.login__options}>
         <FcGoogle size={40} color={"#262626"}/>
         <h3>Continuar com Google</h3>
       </div>

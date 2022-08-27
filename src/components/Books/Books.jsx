@@ -24,8 +24,8 @@ const Books = ({data}) => {
   return (
     <motion.ul className={styles.book__container} initial="hidden" animate="visible" variants={bookContainer}>
         {data && data.map(({volumeInfo}, index) => 
-        <motion.li variants={bookItem}>
-          <Book key={index} title={volumeInfo.title} image={volumeInfo.imageLinks}/>
+        <motion.li variants={bookItem} key={index}>
+          <Book title={volumeInfo.title} image={volumeInfo.imageLinks}/>
         </motion.li>)}
     </motion.ul>
   )

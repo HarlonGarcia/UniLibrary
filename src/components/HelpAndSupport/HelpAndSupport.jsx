@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Support.module.scss';
+import styles from './HelpAndSupport.module.scss';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
 
-const Support = () => {
+const HelpAndSupport = () => {
   return (
     <div className={styles.support}>
         <Header />
@@ -12,4 +12,4 @@ const Support = () => {
   )
 }
 
-export default Support
+export default HelpAndSupport;

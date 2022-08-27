@@ -14,7 +14,9 @@
     }
 }
 
-.lib_img {
+.image {
     height: 100vh;
     position: relative;
+    filter: brightness(.1) grayscale(1) sepia(70%) hue-rotate(-100deg);
+
 }
