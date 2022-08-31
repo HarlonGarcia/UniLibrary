@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Dropbox from '../Dropbox/Dropbox';
 import styles from './Header.module.scss';
 
-const Header = ({logged}) => {
+import { UserContext } from '../../../context/UserContext';
+import Dropbox from '../Dropbox/Dropbox';
+
+const Header = ({noAuthBox}) => {
+  const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
+
   return (
     <div className={styles.header}>
         <Link to="/" className={styles.header__home}>UniLibrary •</Link>
@@ -11,8 +16,8 @@ const Header = ({logged}) => {
             <NavLink end to="/"> Início </NavLink>
             <Dropbox />
             
-            { !logged && <NavLink to="/signup" className={styles.box}>Cadastrar-se</NavLink> }
-            { !logged && <NavLink to="/login" className={styles.box}>Fazer login</NavLink> }   
+            { !noAuthBox && <NavLink to="/signup" className={styles.box}>Cadastrar-se</NavLink> }
+            { !noAuthBox && <NavLink to="/login" className={styles.box}>Fazer login</NavLink> }   
         </nav>
     </div>
   )

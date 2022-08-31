@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import styles from './RegistrationForm.module.scss';
+import { auth_erros } from '../../../utils/constants/auth-errors';
 
 import useForm from '../../../hooks/useForm';
 import Input from '../../Shared/Input/Input';
@@ -33,8 +34,7 @@ const RegistrationForm = () => {
           const response = await createUserDoc(user, { displayName: username.value });
           console.log(response);
         } catch (error) {
-          
-          error.code === 'auth/email-already-in-use' ? alert('Email already in use') :
+          auth_erros[error.code] ? alert(auth_erros[error.code].message) :
           console.log('Encountered an error while user creation: ', error);
         }
       }
@@ -60,24 +60,24 @@ const RegistrationForm = () => {
         label="Senha" {...password} ></Input>
 
         <Input inputstyle={{height: "3.25rem"}} type="text" 
-        placeholder="exemplo@universidade.com" id="email" 
-        label="Email institucional" {...email} ></Input>
+        placeholder="exemplo@email.com" id="email" 
+        label="Email" {...email} ></Input>
 
         <Input inputstyle={{height: "3.25rem"}} type="password" 
         placeholder="Digite sua senha" id="authorization" 
         label="Confirme sua senha" {...confirmPassword} ></Input>
       </div>
       <div className={styles.footer__container}>
+        <div className={styles.service__terms}>
+            <span onClick={() => setAccepted(!accepted)}>
+              {accepted ? <MdCheckBox size={20}/> : <MdCheckBoxOutlineBlank size={20}/> }
+            </span>
+            <h3>Eu li e concordo com os <a>termos e condições de uso</a></h3>
+        </div>
         <div className={styles.registration__footer}>
           <ButtonForm type='submit' label="Cadastrar-se" style={buttons.default} />
           <ButtonForm googleStyle={true} onClick={() => console.log('oi')} icon={<FcGoogle size='2rem' />} 
           label="Entrar com o Google" style={buttons.default}  />
-        </div>
-        <div id={styles.service__terms}>
-            <span onClick={() => setAccepted(!accepted)}>
-              {accepted ? <MdCheckBox size={22}/> : <MdCheckBoxOutlineBlank size={22}/> }
-            </span>
-            <h3>Eu li e concordo com os <a>termos e condições de uso</a></h3>
         </div>
       </div>
     </form>

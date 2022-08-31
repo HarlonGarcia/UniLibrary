@@ -6,7 +6,7 @@ import Footer from '../Shared/Footer/Footer';
 const HelpAndSupport = () => {
   return (
     <div className={styles.support}>
-        <Header />
+        <Header noAuthBox={true}/>
         <Footer />
     </div>
   )

@@ -1,31 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import styles from './LoginForm.module.scss';
-
-import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+
+import { UserContext } from '../../../context/UserContext';
+import { auth_erros } from '../../../utils/constants/auth-errors';
 import useForm from '../../../hooks/useForm';
 import Input from '../../Shared/Input/Input';
 import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 
-import { signInWithGooglePopup, createUserDoc } from '../../../utils/firebase/firebase';
+import { signInWithGooglePopup, createUserDoc, signInUserByEmailAndPassword } from '../../../utils/firebase/firebase';
 
 const LoginForm = () => {
-  const username = useForm('username');
+  const email = useForm('email');
   const password = useForm('password');
+
+  const { setCurrentUser } = useContext(UserContext);
 
   const loginWithGoogle = async () => {
     const {user} = await signInWithGooglePopup();
-    const userDocRef = await createUserDoc(user);
+    await createUserDoc(user);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
-    if (username.validate() && password.validate()) {
-      console.log('Passou');
+    if (!email.validate() || !password.validate()) {
+      alert('Digite informações válidas');
+      return;
     } else {
-      console.log('Não passou');
+      try {
+        const {user} = await signInUserByEmailAndPassword(email.value, password.value);
+        setCurrentUser(user)
+      } catch (error) {
+        auth_erros[error.code] ? alert(auth_erros[error.code].message) :
+        console.log("Something wrong when user login: " + error);
+      }
     }
+
   }
 
   return (
@@ -33,8 +45,8 @@ const LoginForm = () => {
       <h1>UniLibrary •</h1>
       <div className={styles.login__inputs}>
         <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}}
-        type="text" placeholder="Nome do usuário" id="username" label="Usuário"
-        {...username} />
+        type="text" placeholder="exemplo@email.com" id="email" label="Email"
+        {...email} />
 
         <Input fieldstyle={{width: "100%"}} inputstyle={{height: "3.25rem"}} 
         type="password" placeholder="Digite sua senha" id="password" label="Senha"

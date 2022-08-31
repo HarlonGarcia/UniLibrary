@@ -23,7 +23,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: .125rem;
 
     > * {
       margin-right: 2rem;
@@ -32,33 +32,40 @@
     }
   }
 
-  .registration__footer {
+  .service__terms {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
-  }
 
-  #service__terms {
-    display: flex;
-    align-items: center;
+    margin-bottom: 3rem;
 
     span {
       cursor: pointer;
+      padding-left: .0625rem;
     }
 
     h3 {
       margin-left: 0.8rem;
       line-height: 1.2rem;
-    }
 
-    a {
-      color: var.$link;
-      text-decoration: underline;
-      cursor: pointer;
+      font-size: .95rem;
+      padding-bottom: .125rem;
 
-      &:hover {
-        color: var.$purple;
+      a {
+        color: var.$link;
+        text-decoration: underline;
+        cursor: pointer;
+  
+        &:hover {
+          color: var.$purple;
+        }
       }
     }
+
   }
+
+  .registration__footer {
+    display: flex;
+    align-items: center;
+  }
+
 }

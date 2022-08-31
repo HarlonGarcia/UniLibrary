@@ -11,7 +11,7 @@ import { BiBrain } from 'react-icons/bi';
 import { GiChemicalDrop } from 'react-icons/gi';
 import { TbDental } from 'react-icons/tb';
 
-const icons = [
+const all_categories = [
     { icon: <SiAtom size={'3rem'} />,
     label: 'Física' },
     { icon: <BiBrain size={'3rem'}/>,
@@ -42,7 +42,7 @@ const Categories = (props) => {
     <div className={styles.categories_container} {...props}>
         <h2>Principais categorias</h2>
         <div className={styles.categories}>
-            {icons.map(({icon, label}, index) => <CategoryCard key={index} label={label} icon={icon}/>)}
+            {all_categories.map(({icon, label}, index) => <CategoryCard key={index} label={label} icon={icon}/>)}
         </div>
     </div>
   )

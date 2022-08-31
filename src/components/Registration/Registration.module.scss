@@ -1,24 +1,31 @@
-.registration {
+.registration__container {
     width: 100vw;
     height: 100vh;
     
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    overflow: hidden;
-
-    .remaining_signup {
-        height: 100%;
-        width: 100%;
+    .registration {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    
+        overflow: hidden;
+    
+        .remaining_signup {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    .registration__image__cotainer {
+        height: calc(100vh - 4rem);
+    }
+
+    .image {
+        height: 100%;
+        filter: brightness(.1) grayscale(1);
     }
 }
 
-.image {
-    height: 100vh;
-    position: relative;
-    filter: brightness(.1) grayscale(1) sepia(70%) hue-rotate(-100deg);
-}
+
