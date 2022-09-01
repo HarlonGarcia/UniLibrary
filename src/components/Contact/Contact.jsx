@@ -1,26 +1,26 @@
 import React from 'react';
 import styles from './Contact.module.scss';
-import { RiMailSendFill } from 'react-icons/ri';
-import Header from '../Shared/Header/Header';
-import ButtonForm from '../Shared/ButtonForm/ButtonForm';
 import Footer from '../Shared/Footer/Footer';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <div className={styles.contact__page}>
-        <Header logged={true}/>
-        <div className={styles.contact__form}>
-            <form className={styles.form__center}>
-                <label htmlFor='contact__textarea' className={styles.contact__label}>Fale conosco:</label>
-                <textarea name='message' id='contact__textarea' className={styles.contact__textarea} placeholder='Digite sua mensagem'></textarea>
-                <ButtonForm type='submit' label={<RiMailSendFill size={'1.5rem'}/>} style={{ borderRadius: '10px', 
-                width: '10rem', alignSelf: 'center', marginBottom: '0', position: 'relative',
-                bottom: '-20px', backgroundColor: '#EEEEEE', color: '#50007f',
-                boxShadow: '0px 8px 22px -3px rgba(80, 0, 127, .6)'}}/>
-            </form>
-        </div>
-        <Footer />
-    </div>
+    <>
+      <motion.div 
+      className={styles.contact__page}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0}}>
+          <div className={styles.contact__form}>
+              <form className={styles.form__center}>
+                  <label htmlFor='contact__textarea' className={styles.contact__label}>Fale conosco:</label>
+                  <textarea name='message' id='contact__textarea' className={styles.contact__textarea} 
+                  placeholder='Digite sua mensagem'></textarea>
+              </form>
+          </div>
+      </motion.div>
+      <Footer />
+    </>
   )
 }
 

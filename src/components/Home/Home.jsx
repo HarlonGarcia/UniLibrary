@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Home.module.scss';
-import { VscSearch } from 'react-icons/vsc'
+import { VscSearch } from 'react-icons/vsc';
+import { motion } from "framer-motion";
 
 import Books from '../Books/Books'
 import Banner from '../Shared/Banner/Banner';
 import Header from '../Shared/Header/Header';
 import Categories from '../Categories/Categories';
 import Footer from '../Shared/Footer/Footer';
-import Loading from '../Shared/Loading/Loading'
+import Wave from '../Shared/SvgComponents/HomeWave';
 import Pagination from '../Shared/Pagination/Pagination';
+import Loading from '../Shared/SvgComponents/Loading/Loading';
 
 const Home = () => {
   const [search, setSearch] = useState(''); 
@@ -44,8 +46,11 @@ const Home = () => {
   }
 
   return (
-    <div id={styles.home__page}>
-      <Header />
+    <motion.div 
+    id={styles.home__page}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0}}>
       <Banner />
       <div className={styles.search}>
         <VscSearch size={"3.5rem"} style={{ paddingTop: '1.25rem', paddingRight: '1rem', cursor: 'pointer' }} 
@@ -56,12 +61,13 @@ const Home = () => {
       {!books && !load && <Categories style={{ marginBottom: '1rem'}} /> }
       {books && <hr className={styles.line} data-content="Resultados da pesquisa"/>}
       
-      {load && <Loading width={50} background={'rgba(0, 0, 0, .025)'} color='#50007F'/>}
+      {load && <Loading/>}
       {!load && <Books data={books}/>}
 
       {books && !load && <Pagination max={maxResults} current={currentPage} handleClick={handleClick}/>}
+      {/* <Wave color='#131313' style={{position: 'absolute', zIndex: '-1', bottom: 0, paddingBottom: '2rem'}}/> */}
       <Footer />
-    </div>
+    </motion.div>
   )
 }
 

@@ -6,7 +6,6 @@ import Header from '../Shared/Header/Header';
 const About = () => {
   return (
     <div className={styles.about}>
-        <Header />
         // TODO 
         <Footer />
     </div>

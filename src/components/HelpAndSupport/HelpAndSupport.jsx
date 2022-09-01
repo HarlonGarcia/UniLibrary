@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './HelpAndSupport.module.scss';
-import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import { motion } from 'framer-motion';
 
 const HelpAndSupport = () => {
   return (
-    <div className={styles.support}>
-        <Header noAuthBox={true}/>
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0}} 
+    className={styles.support}>
         <Footer />
-    </div>
+    </motion.div>
   )
 }
 

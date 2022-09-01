@@ -28,11 +28,12 @@ const RegistrationForm = () => {
       } else if (password.value !== confirmPassword.value) {
         alert('Password mismatch')
         return;
+      } else if (!accepted) {
+        alert('Please, check the terms & privacy box')
       } else {
         try {
           const { user } = await createUserByEmailAndPassword(email.value, password.value)
           const response = await createUserDoc(user, { displayName: username.value });
-          console.log(response);
         } catch (error) {
           auth_erros[error.code] ? alert(auth_erros[error.code].message) :
           console.log('Encountered an error while user creation: ', error);

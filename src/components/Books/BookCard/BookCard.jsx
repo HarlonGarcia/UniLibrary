@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Book.module.scss';
+import styles from './BookCard.module.scss';
 import { TbBookOff } from 'react-icons/tb';
 
-const Book = ({title, image}) => {
+const BookCard = ({title, image}) => {
     let thumbnail = image && image.thumbnail;
   
     if (!thumbnail) return null;
@@ -16,4 +16,4 @@ const Book = ({title, image}) => {
   )
 }
 
-export default Book;
+export default BookCard;

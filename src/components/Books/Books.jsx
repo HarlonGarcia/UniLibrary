@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Books.module.scss';
-import Book from './Book/Book';
 import { motion } from "framer-motion";
+import BookCard from './BookCard/BookCard';
 
 const Books = ({data}) => {
   const bookItem = {
@@ -25,7 +25,7 @@ const Books = ({data}) => {
     <motion.ul className={styles.book__container} initial="hidden" animate="visible" variants={bookContainer}>
         {data && data.map(({volumeInfo}, index) => 
         <motion.li variants={bookItem} key={index}>
-          <Book title={volumeInfo.title} image={volumeInfo.imageLinks}/>
+          <BookCard title={volumeInfo.title} image={volumeInfo.imageLinks}/>
         </motion.li>)}
     </motion.ul>
   )

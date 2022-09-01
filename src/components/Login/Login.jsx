@@ -1,12 +1,15 @@
 import React from 'react';
 import LoginForm from './LoginForm/LoginForm';
 import styles from './Login.module.scss';
-import Header from '../Shared/Header/Header';
+import { motion } from 'framer-motion';
 
 const Login = () => {
   return (
-    <div className={styles.login__container}>
-    <Header noAuthBox={true}></Header>
+    <motion.div 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0}}
+    className={styles.login__container}>
     <div className={styles.login}>
       <div className={styles.login__image__cotainer}>
         <img src="src/assets/images/library.png" alt="Library Image" className={styles.image} />
@@ -15,7 +18,7 @@ const Login = () => {
         <LoginForm></LoginForm>
       </div>
     </div>
-    </div>
+    </motion.div>
   )
 }
 

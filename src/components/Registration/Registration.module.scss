@@ -1,7 +1,7 @@
 .registration__container {
     width: 100vw;
-    height: 100vh;
-    
+    max-height: 100vh;
+
     .registration {
         display: flex;
         flex-direction: row;
@@ -20,9 +20,12 @@
     
     .registration__image__cotainer {
         height: calc(100vh - 4rem);
+        overflow: hidden;
     }
 
     .image {
+        width: 900px;
+        object-fit: cover;
         height: 100%;
         filter: brightness(.1) grayscale(1);
     }

@@ -1,6 +1,5 @@
 .login__container {
     width: 100vw;
-    height: 100vh;
 
     .login {
         display: flex;
@@ -19,9 +18,12 @@
 
     .login__image__cotainer {
         height: calc(100vh - 4rem);
+        overflow: hidden;
     }
     
     .image {
+        width: 1200px;
+        object-fit: cover;
         height: 100%;
         filter: brightness(.1) grayscale(1);
     }
