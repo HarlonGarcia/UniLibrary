@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styles from './LoginForm.module.scss';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import swal from 'sweetalert';
 
 import { UserContext } from '../../../context/UserContext';
 import { auth_erros } from '../../../utils/constants/auth-errors';
@@ -17,6 +18,15 @@ const LoginForm = () => {
 
   const { setCurrentUser } = useContext(UserContext);
 
+  const defaultAlert = {    
+    closeOnClickOutside: true,
+    closeOnEsc: true,
+    timer: 1500,
+    buttons: false,
+    className: styles.swal,
+    icon: 'info'
+  }
+
   const loginWithGoogle = async () => {
     const {user} = await signInWithGooglePopup();
     await createUserDoc(user);
@@ -24,16 +34,18 @@ const LoginForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-
+  
     if (!email.validate() || !password.validate()) {
-      alert('Digite informações válidas');
+      swal("Email ou senha inválido!", {
+        ...defaultAlert
+      });
       return;
     } else {
       try {
         const {user} = await signInUserByEmailAndPassword(email.value, password.value);
         setCurrentUser(user)
       } catch (error) {
-        auth_erros[error.code] ? alert(auth_erros[error.code].message) :
+        auth_erros[error.code] ? swal(auth_erros[error.code].message, {...defaultAlert}) :
         console.log("Something wrong when user login: " + error);
       }
     }

@@ -70,3 +70,14 @@
         }
     }
 }
+
+.swal {
+    background-color: var.$dark-color;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, .5);
+    
+    > * {
+        font-size: 1.25rem;
+        color: var.$white;
+    }
+}
+  

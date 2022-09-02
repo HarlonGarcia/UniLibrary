@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import styles from './RegistrationForm.module.scss';
 import { auth_erros } from '../../../utils/constants/auth-errors';
+import swal from 'sweetalert';
 
 import useForm from '../../../hooks/useForm';
 import Input from '../../Shared/Input/Input';
@@ -19,17 +20,32 @@ const RegistrationForm = () => {
     const password = useForm('password');
     const confirmPassword = useForm('password');
 
+    const defaultAlert = {    
+      closeOnClickOutside: true,
+      closeOnEsc: true,
+      timer: 1500,
+      buttons: false,
+      className: styles.swal,
+      icon: 'info'
+    }
+
     const handleSubmit = async (event) => {
       event.preventDefault()
 
       if (!username.validate() || !email.validate() || !password.validate() || !confirmPassword.validate()) {
-        alert('Invalid information');
+        swal("Verifique seus dados e tente novamente!", {
+          ...defaultAlert
+        });
         return;
       } else if (password.value !== confirmPassword.value) {
-        alert('Password mismatch')
+        swal("Senha de confirmação incompatível!", {
+          ...defaultAlert
+        });
         return;
       } else if (!accepted) {
-        alert('Please, check the terms & privacy box')
+        swal("Por favor, aceite os termos e condições!", {
+          ...defaultAlert
+        });
       } else {
         try {
           const { user } = await createUserByEmailAndPassword(email.value, password.value)
