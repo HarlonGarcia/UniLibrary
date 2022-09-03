@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import styles from './LoginForm.module.scss';
 import { Link } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
 import swal from 'sweetalert';
+import { FcGoogle } from 'react-icons/fc';
 
 import { UserContext } from '../../../context/UserContext';
 import { auth_erros } from '../../../utils/constants/auth-errors';
@@ -70,10 +70,12 @@ const LoginForm = () => {
         <div> OU </div>
         <hr />
       </div>
-      <div onClick={loginWithGoogle} id={styles.login__options}>
-        <FcGoogle size={40} color={"#262626"}/>
+
+      <button onClick={loginWithGoogle} className={styles.login__options}>
+        <FcGoogle size={30} />
         <h3>Continuar com Google</h3>
-      </div>
+      </button>
+
       <h3>Não tem conta? <Link to="/signup">Cadastre-se!</Link></h3>
     </form>
   )
