@@ -23,9 +23,9 @@ const Books = ({data}) => {
 
   return (
     <motion.ul className={styles.book__container} initial="hidden" animate="visible" variants={bookContainer}>
-        {data && data.map(({volumeInfo}, index) => 
+        {data && data.map(({volumeInfo, id}, index) => 
         <motion.li variants={bookItem} key={index}>
-          <BookCard title={volumeInfo.title} image={volumeInfo.imageLinks}/>
+          <BookCard id={id} title={volumeInfo.title} image={volumeInfo.imageLinks}/>
         </motion.li>)}
     </motion.ul>
   )

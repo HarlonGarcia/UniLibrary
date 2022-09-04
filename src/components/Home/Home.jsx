@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Home.module.scss';
 import { VscSearch } from 'react-icons/vsc';
 import { motion } from "framer-motion";
+import axios from 'axios';
 
 import Books from '../Books/Books'
 import Banner from '../Shared/Banner/Banner';
@@ -37,10 +38,9 @@ const Home = () => {
   const searchBook = async (event) => {
     if ((event && event.key === 'Enter') || search) {
       setLoad(true)
-      const response = await fetch(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes?q=${search}&maxResults=${maxResults}&startIndex=${offset}&key=${import.meta.env.VITE_APP_GOOGLE_API_KEY}`);
-      const json = await response.json();
-      setBooks(json.items);
+      const {data} = await axios(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes?q=${search}&maxResults=${maxResults}&startIndex=${offset}&key=${import.meta.env.VITE_APP_GOOGLE_API_KEY}`);
 
+      setBooks(data.items);
       setTimeout(() => setLoad(false), 700)
     }
   }

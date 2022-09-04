@@ -7,7 +7,6 @@ import Dropbox from '../Dropbox/Dropbox';
 
 const Header = ({noAuthBox}) => {
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
 
   return (
     <div className={styles.header}>

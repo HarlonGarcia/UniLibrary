@@ -24,6 +24,6 @@ Atenção: Este projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md)
 - [React-icons](https://react-icons.github.io/react-icons/)
 - [Sass](https://sass-lang.com/install)
 - [ViteJS](https://vitejs.dev/)
-- [Framer Motion](https://www.framer.com/motion/)
 - [Firebase](https://firebase.google.com/)
-- [Sweet Alert](https://sweetalert.js.org/)
+
+Além destas tecnologias, também foi utilizado o [Framer Motion](https://www.framer.com/motion/) e o [Sweet Alert](https://sweetalert.js.org/) para estilização do site.

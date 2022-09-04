@@ -4,7 +4,7 @@ import styles from './CategoryCard.module.scss'
 const CategoryCard = ({icon, label}) => {
   
   const handleClick = () => {
-    console.log('oi');
+    console.log('CategoryCard');
   }
 
   return (
