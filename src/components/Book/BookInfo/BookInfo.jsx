@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './BookInfo.module.scss';
 import MoreDetails from './MoreDetails/MoreDetails';
 
-const BookInfo = ({title, subtitle, description, previewLink}) => {
+const BookInfo = ({title, subtitle, description, previewLink, publishedDate, pageCount, language}) => {
     const [view, setView] = useState(false);
     const clearHtmlRegex = /<[^>]*>?|&[a-z]+;/gm;
 
@@ -16,11 +16,10 @@ const BookInfo = ({title, subtitle, description, previewLink}) => {
         
         <div className={styles.preview__container}>
             <a href={previewLink}><button className={styles.preview_button}>Amostra grátis</button></a>
-            <h4>Atenção: Alguns livros podem não conter uma amostra grátis!</h4>
+            <h5>Atenção: Alguns livros podem não conter uma amostra grátis!</h5>
         </div>
 
-        <MoreDetails />
-        // TODO Ano publicado, quantidade de páginas e outros detalhes sobre o livro
+        <MoreDetails publishedDate={publishedDate} pageCount={pageCount} language={language}/>
     </div>
   )
 }

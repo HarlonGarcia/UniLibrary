@@ -19,22 +19,15 @@ const Book = () => {
         });
     }, []);
 
-    // "title":
-    // "subtitle": 
-    // "authors": []
-    // "publisher":
-    // "publishedDate":
-    // "description":
-    // "accessInfo":
-    //       "webReaderLink": 
-
     if (!info) return null;
     return (
-      
     <div className={styles.book__container}>
       <BookCover imageUrl={info.volumeInfo.imageLinks} authors={info.volumeInfo.authors} publisher={info.volumeInfo.publisher}/>
+      
       <BookInfo title={info.volumeInfo.title} subtitle={info.volumeInfo.subtitle} 
-      description={info.volumeInfo.description} previewLink={info.accessInfo.webReaderLink}/>
+      description={info.volumeInfo.description} previewLink={info.accessInfo.webReaderLink}
+      publishedDate={info.volumeInfo.publishedDate} pageCount={info.volumeInfo.pageCount}
+      language={info.volumeInfo.language}/>
     </div>
   );
 };

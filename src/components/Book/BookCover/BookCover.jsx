@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './BookCover.module.scss';
 
 const BookCover = ({imageUrl, authors, publisher}) => {
-    const image = imageUrl && imageUrl.small ? imageUrl.small : ''; 
+  const image = imageUrl ? imageUrl.small || imageUrl.thumbnail : ''; 
 
   return (
     <div className={styles.bookcover__container}>
