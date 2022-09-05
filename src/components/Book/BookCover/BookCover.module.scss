@@ -1,0 +1,22 @@
+.bookcover__container {
+    width: 14rem;
+
+    .image__container {
+        width: 14rem;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+
+    .secondary_info {
+        margin-bottom: .75rem ;
+
+        span {
+            font-weight: 900;
+        }
+    
+        li {
+            list-style: none;
+            margin-top: .25rem;
+        }
+    }
+}

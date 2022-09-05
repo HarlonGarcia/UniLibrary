@@ -1,7 +1,10 @@
+@use '../../index.scss' as var;
+
 .book__container {
     display: flex;
     width: 100%;
-    color: aliceblue;
+    height: calc(100vh - 4rem);
+
+    color: var.$very-dark;
     padding: 2rem;
-    background-color: green;
 }

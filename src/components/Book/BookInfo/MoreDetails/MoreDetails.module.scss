@@ -1,0 +1,10 @@
+@use '../../../../index.scss' as var;
+
+.moredetails__container {
+    width: 100%;
+    height: 400px;
+    background-color: var.$very-dark;
+    color: var.$white;
+
+    padding: 1.5rem;
+}
