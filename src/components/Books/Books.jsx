@@ -3,7 +3,7 @@ import styles from './Books.module.scss';
 import { motion } from "framer-motion";
 import BookCard from './BookCard/BookCard';
 
-const Books = ({data}) => {
+const Books = ({data, style, cardStyle}) => {
   const bookItem = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -22,10 +22,10 @@ const Books = ({data}) => {
   }
 
   return (
-    <motion.ul className={styles.book__container} initial="hidden" animate="visible" variants={bookContainer}>
+    <motion.ul style={style} className={styles.book__container} initial="hidden" animate="visible" variants={bookContainer}>
         {data && data.map(({volumeInfo, id}, index) => 
         <motion.li variants={bookItem} key={index}>
-          <BookCard id={id} title={volumeInfo.title} image={volumeInfo.imageLinks}/>
+          <BookCard style={cardStyle} id={id} title={volumeInfo.title} image={volumeInfo.imageLinks}/>
         </motion.li>)}
     </motion.ul>
   )

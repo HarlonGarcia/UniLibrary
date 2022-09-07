@@ -6,10 +6,8 @@ import axios from 'axios';
 
 import Books from '../Books/Books'
 import Banner from '../Shared/Banner/Banner';
-import Header from '../Shared/Header/Header';
 import Categories from '../Categories/Categories';
 import Footer from '../Shared/Footer/Footer';
-import Wave from '../Shared/SvgComponents/HomeWave';
 import Pagination from '../Shared/Pagination/Pagination';
 import Loading from '../Shared/SvgComponents/Loading/Loading';
 
@@ -32,7 +30,7 @@ const Home = () => {
   }
 
   const handleClick = ({currentTarget}) => {
-    currentTarget.id === 'prev' ? setCurrentPage(currentPage - 1) : setCurrentPage(currentPage + 1)
+    currentTarget.id === 'prev' ? setCurrentPage(currentPage - 1) : setCurrentPage(currentPage + 1);
   }
 
   const searchBook = async (event) => {

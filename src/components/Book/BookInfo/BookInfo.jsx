@@ -1,25 +1,49 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './BookInfo.module.scss';
-import MoreDetails from './MoreDetails/MoreDetails';
+import axios from 'axios';
 
-const BookInfo = ({title, subtitle, description, previewLink, publishedDate, pageCount, language}) => {
+import MoreDetails from './MoreDetails/MoreDetails';
+import Books from '../../Books/Books';
+
+const BookInfo = ({title, subtitle, description, previewLink, publishedDate, pageCount, language, pdf, authors}) => {
+    const [authorBooks, setAuthorBooks] = useState('');
     const [view, setView] = useState(false);
+
     const clearHtmlRegex = /<[^>]*>?|&[a-z]+;/gm;
+    const maxResults = 10;
+
+    useEffect(() => {
+        axios(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes?q=inauthor:${authors[0]}&maxResults=${maxResults}&key=${import.meta.env.VITE_APP_GOOGLE_API_KEY}`)
+        .then(({data}) => {
+          setAuthorBooks(data);
+        });
+    }, []);
 
     return (
     <div className={styles.bookinfo__container}>
-        <h1>{title}</h1>
-        <h3>{subtitle}</h3>
-        <p className={view ? styles.long_description : styles.short_description}>{description.replace((clearHtmlRegex), ' ')}</p>
-        <button className={styles.view_button} onClick={() => setView(!view)}>{ view ? 'Ver menos' : 'Ver mais'}</button>
-        
-        <div className={styles.preview__container}>
-            <a href={previewLink}><button className={styles.preview_button}>Amostra grátis</button></a>
-            <h5>Atenção: Alguns livros podem não conter uma amostra grátis!</h5>
-        </div>
+            
+            <h1>{title}</h1>
+            <h3>{subtitle}</h3>
+            <p className={view ? styles.long_description : styles.short_description}>{description.replace((clearHtmlRegex), ' ')}</p>
+            <button className={styles.view_button} onClick={() => setView(!view)}>{ view ? 'Ver menos' : 'Ver mais'}</button>
+            
+            <div className={styles.buttons__container}>
+                {pdf.isAvailable && 
+                    <a href={pdf.acsTokenLink} download>
+                        <button data-back='Download' data-front="Baixar e-book" className={styles.download_button}>
+                        </button>
+                    </a>
+                }
 
-        <MoreDetails publishedDate={publishedDate} pageCount={pageCount} language={language}/>
+                <a href={previewLink}><button className={styles.preview_button}>Amostra grátis</button></a>
+                <h5>Atenção: Alguns livros podem não conter uma amostra grátis!</h5>
+            </div>
+
+            <MoreDetails publishedDate={publishedDate} pageCount={pageCount} language={language}/>
+       
+        <h2 className={styles.books_topic}>Mais livros desse autor</h2>
+        <Books data={authorBooks.items}
+        style={{ width: '100%', marginBottom: '1rem', marginLeft: '-1rem'}} />
     </div>
   )
 }

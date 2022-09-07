@@ -1,90 +1,152 @@
-@use '../../../index.scss' as var;
+@use "../../../index.scss" as var;
 
 .bookinfo__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
 
-    width: 100%;
-    padding: 0 1.25rem;
+  width: 100%;
+  padding: 0 1.25rem;
+  color: var.$very-dark;
+
+  h1, .books_topic, p {
+    margin-bottom: .75rem;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 1.75rem;
+  }
+
+  .books_topic {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    color: rgba(var.$dark-color, 0.6);
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 25px;
+  }
+
+  .short_description {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .long_description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .view_button {
+    width: fit-content;
+    border: none;
+    outline: none;
+    padding: 0;
+
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+
+    background-color: transparent;
     color: var.$very-dark;
-    // border: 2px solid red;
+    font-weight: 600;
+  }
 
-    h1 {
-        font-weight: 900;
-        font-size: 1.75rem;
-        margin-bottom: .75rem;
+  .buttons__container {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 2.5rem;
+
+    a > button {
+      width: max-content;
+
+      margin-right: 1rem;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      transition: all 0.3s ease-out;
     }
 
-    h3 {
-        font-weight: 600;
-        color: rgba(var.$dark-color, .6);
-        margin-bottom: 2rem;
-    }
+    $speed: 0.5s;
 
-    p {
-        margin-bottom: .75rem;
-        line-height: 25px;
-    }
+    .download_button {
+      position: relative;
+      text-align: center;
 
-    .short_description {
-        display: -webkit-box;
-        -webkit-line-clamp: 8;
-        -webkit-box-orient: vertical;  
-        overflow: hidden;
-    }
+      line-height: 40px;
+      padding: 0;
+      outline: 0;
 
-    .long_description {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;  
-        overflow: hidden;
-    }
-
-    .view_button {
-        width: fit-content;
-        border: none;
-        outline: none;
-        padding: 0;
-
-        cursor: pointer;
-        font-size: .9rem;
-        margin-bottom: 2rem;
-
-        background-color: transparent;
-        color: var.$very-dark;
-        font-weight: 600;
-    }
-
-    .preview__container {
-        display: flex;
-        align-items: center;
-
-        margin-bottom: 2.75rem;
-
-        .preview_button {
-            width: fit-content;
-    
-            margin-right: 1rem;
-            padding: .5rem .75rem;
-            cursor: pointer;
-            outline: none;
-            border: none;
-            background-color: var.$orange;
-            transition: all 400ms ease-out;
-            
-            font-size: 1rem;
-            color: var.$very-dark;
-    
-            &:hover {
-                background-color: var.$very-dark;
-                color: var.$white;
-            }
+      &:hover {
+        &:after {
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
         }
 
-        h5 {
-            font-size: .9rem;
-            color: var.$red;
+        &:before {
+          opacity: 0;
+          transform: translateY(50%) rotateX(90deg);
         }
+      }
+
+      &:after {
+        display: block;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        color: var.$white;
+        transition: $speed;
+        position: absolute;
+        background: var.$very-dark;
+        content: attr(data-back);
+        transform: translateY(-50%) rotateX(90deg);
+      }
+
+      &:before {
+        top: 0;
+        left: 0;
+        opacity: 1;
+        color: var.$white;
+        display: block;
+        padding: 0 30px;
+        line-height: 40px;
+        transition: $speed;
+        position: relative;
+        background: var.$purple;
+        content: attr(data-front);
+        transform: translateY(0) rotateX(0);
+      }
     }
+
+    .preview_button {
+      background-color: var.$orange;
+      color: var.$very-dark;
+
+      padding: 0.675rem 0.75rem;
+
+      &:hover {
+        background-color: var.$very-dark;
+        color: var.$white;
+      }
+    }
+
+    h5 {
+      font-size: 0.9rem;
+      color: var.$red;
+    }
+  }
 }

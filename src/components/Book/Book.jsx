@@ -9,14 +9,14 @@ import BookCover from "./BookCover/BookCover";
 import BookInfo from "./BookInfo/BookInfo";
 
 const Book = () => {
-    const [info, setInfo] = useState(null);
+    const [info, setInfo] = useState('');
     const { id } = useParams();
 
     useEffect(() => {
-        axios(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes/${id}`)
-        .then(({data}) => {
-            setInfo(data);
-        });
+      axios(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes/${id}`)
+      .then(({data}) => {
+        setInfo(data);
+      });
     }, []);
 
     if (!info) return null;
@@ -27,7 +27,7 @@ const Book = () => {
       <BookInfo title={info.volumeInfo.title} subtitle={info.volumeInfo.subtitle} 
       description={info.volumeInfo.description} previewLink={info.accessInfo.webReaderLink}
       publishedDate={info.volumeInfo.publishedDate} pageCount={info.volumeInfo.pageCount}
-      language={info.volumeInfo.language}/>
+      language={info.volumeInfo.language} pdf={info.accessInfo.pdf} authors={info.volumeInfo.authors}/>
     </div>
   );
 };
