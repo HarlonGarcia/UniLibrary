@@ -10,7 +10,7 @@ const BookInfo = ({title, subtitle, description, previewLink, publishedDate, pag
     const [view, setView] = useState(false);
 
     const clearHtmlRegex = /<[^>]*>?|&[a-z]+;/gm;
-    const maxResults = 10;
+    const maxResults = 6;
 
     useEffect(() => {
         axios(`${import.meta.env.VITE_APP_GOOGLE_API_URL}/volumes?q=inauthor:${authors[0]}&maxResults=${maxResults}&key=${import.meta.env.VITE_APP_GOOGLE_API_KEY}`)

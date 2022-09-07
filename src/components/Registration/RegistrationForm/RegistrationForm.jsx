@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './RegistrationForm.module.scss';
 import { auth_erros } from '../../../utils/constants/auth-errors';
 import swal from 'sweetalert';
@@ -11,6 +10,7 @@ import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 import { FcGoogle } from 'react-icons/fc';
 
+import { UserContext } from '../../../context/UserContext';
 import { createUserByEmailAndPassword, createUserDoc } from '../../../utils/firebase/firebase';
 
 const RegistrationForm = () => {
@@ -19,6 +19,8 @@ const RegistrationForm = () => {
     const email = useForm('email');
     const password = useForm('password');
     const confirmPassword = useForm('password');
+
+    const { setCurrentUser } = useContext(UserContext);
 
     const defaultAlert = {    
       closeOnClickOutside: true,
@@ -49,7 +51,8 @@ const RegistrationForm = () => {
       } else {
         try {
           const { user } = await createUserByEmailAndPassword(email.value, password.value)
-          const response = await createUserDoc(user, { displayName: username.value });
+          setCurrentUser(user)
+          await createUserDoc(user, { displayName: username.value });
         } catch (error) {
           auth_erros[error.code] ? alert(auth_erros[error.code].message) :
           console.log('Encountered an error while user creation: ', error);
@@ -93,7 +96,7 @@ const RegistrationForm = () => {
         </div>
         <div className={styles.registration__footer}>
           <ButtonForm type='submit' label="Cadastrar-se" style={buttons.default} />
-          <ButtonForm googleStyle={true} onClick={() => console.log('oi')} icon={<FcGoogle size='2rem' />} 
+          <ButtonForm googleStyle={true} onClick={() => 'oi'} icon={<FcGoogle size='2rem' />} 
           label="Entrar com o Google" style={buttons.default}  />
         </div>
       </div>

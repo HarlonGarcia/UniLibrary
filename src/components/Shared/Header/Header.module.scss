@@ -32,12 +32,20 @@
             }
         }
 
+        div:has(a) {
+            padding: 0;
+        }
+
         .box {
             margin: 0 .75rem;
             border: 0.1px var.$white solid;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all .4s;
+
+            color: var.$white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
             
             &:hover {
                 color: var.$very-dark;

@@ -17,7 +17,7 @@ const Book = () => {
       .then(({data}) => {
         setInfo(data);
       });
-    }, []);
+    }, [id]);
 
     if (!info) return null;
     return (

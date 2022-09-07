@@ -27,7 +27,9 @@ const LoginForm = () => {
     icon: 'info'
   }
 
-  const loginWithGoogle = async () => {
+  const loginWithGoogle = async (event) => {
+    event.preventDefault()
+
     const {user} = await signInWithGooglePopup();
     await createUserDoc(user);
   }
