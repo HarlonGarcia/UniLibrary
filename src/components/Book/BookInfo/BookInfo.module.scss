@@ -10,8 +10,10 @@
   padding: 0 1.25rem;
   color: var.$very-dark;
 
-  h1, .books_topic, p {
-    margin-bottom: .75rem;
+  h1,
+  .books_topic,
+  p {
+    margin-bottom: 0.75rem;
   }
 
   h1 {
@@ -20,6 +22,8 @@
   }
 
   .books_topic {
+    display: flex;
+    justify-content: flex-start;
     font-weight: 600;
     font-size: 1.5rem;
   }
@@ -49,17 +53,32 @@
 
   .view_button {
     width: fit-content;
-    border: none;
     outline: none;
-    padding: 0;
+    padding: 0.5rem 1rem;
 
     cursor: pointer;
     font-size: 0.9rem;
     margin-bottom: 2rem;
 
-    background-color: transparent;
+    background-color: rgba(var.$dark-color, 0.05);
+    border: 1px solid rgba(var.$dark-color, 0.4);
+    border-radius: 4px;
+
     color: var.$very-dark;
     font-weight: 600;
+  }
+
+  .no_description {
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+
+    color: rgba(var.$dark-color, 0.7);
+    background-color: rgba(var.$dark-color, 0.05);
+    border: 1px solid rgba(var.$dark-color, 0.4);
+    border-radius: 4px;
+
+    font-size: 0.975rem;
   }
 
   .buttons__container {

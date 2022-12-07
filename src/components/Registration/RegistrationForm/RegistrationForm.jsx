@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import styles from './RegistrationForm.module.scss';
 import { auth_erros } from '../../../utils/constants/auth-errors';
 import swal from 'sweetalert';
@@ -10,7 +10,6 @@ import ButtonForm from '../../Shared/ButtonForm/ButtonForm';
 import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 import { FcGoogle } from 'react-icons/fc';
 
-import { UserContext } from '../../../context/UserContext';
 import { createUserByEmailAndPassword, createUserDoc } from '../../../utils/firebase/firebase';
 
 const RegistrationForm = () => {
@@ -19,8 +18,6 @@ const RegistrationForm = () => {
     const email = useForm('email');
     const password = useForm('password');
     const confirmPassword = useForm('password');
-
-    const { setCurrentUser } = useContext(UserContext);
 
     const defaultAlert = {    
       closeOnClickOutside: true,
@@ -51,7 +48,6 @@ const RegistrationForm = () => {
       } else {
         try {
           const { user } = await createUserByEmailAndPassword(email.value, password.value)
-          setCurrentUser(user)
           await createUserDoc(user, { displayName: username.value });
         } catch (error) {
           auth_erros[error.code] ? alert(auth_erros[error.code].message) :
@@ -87,17 +83,15 @@ const RegistrationForm = () => {
         placeholder="Digite sua senha" id="authorization" 
         label="Confirme sua senha" {...confirmPassword} ></Input>
       </div>
-      <div className={styles.footer__container}>
+        
+      <div className={styles.registration__footer}>
+        <ButtonForm type='submit' label="Cadastrar-se" style={buttons.default} />
+        
         <div className={styles.service__terms}>
-            <span onClick={() => setAccepted(!accepted)}>
-              {accepted ? <MdCheckBox size={20}/> : <MdCheckBoxOutlineBlank size={20}/> }
-            </span>
-            <h3>Eu li e concordo com os <a>termos e condições de uso</a></h3>
-        </div>
-        <div className={styles.registration__footer}>
-          <ButtonForm type='submit' label="Cadastrar-se" style={buttons.default} />
-          <ButtonForm googleStyle={true} onClick={() => 'oi'} icon={<FcGoogle size='2rem' />} 
-          label="Entrar com o Google" style={buttons.default}  />
+          <span onClick={() => setAccepted(!accepted)}>
+            {accepted ? <MdCheckBox size={20}/> : <MdCheckBoxOutlineBlank size={20}/> }
+          </span>
+          <h3>Eu li e concordo com os <a>termos e condições de uso</a></h3>
         </div>
       </div>
     </form>

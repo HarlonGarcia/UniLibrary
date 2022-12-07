@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './LoginForm.module.scss';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { FcGoogle } from 'react-icons/fc';
 
-import { UserContext } from '../../../context/UserContext';
 import { auth_erros } from '../../../utils/constants/auth-errors';
 import useForm from '../../../hooks/useForm';
 import Input from '../../Shared/Input/Input';
@@ -16,8 +15,6 @@ const LoginForm = () => {
   const email = useForm('email');
   const password = useForm('password');
 
-  const { setCurrentUser } = useContext(UserContext);
-
   const defaultAlert = {    
     closeOnClickOutside: true,
     closeOnEsc: true,
@@ -28,10 +25,8 @@ const LoginForm = () => {
   }
 
   const loginWithGoogle = async (event) => {
-    event.preventDefault()
-
-    const {user} = await signInWithGooglePopup();
-    await createUserDoc(user);
+    event.preventDefault();
+    await signInWithGooglePopup();
   }
 
   const handleSubmit = async (event) => {
@@ -44,8 +39,7 @@ const LoginForm = () => {
       return;
     } else {
       try {
-        const {user} = await signInUserByEmailAndPassword(email.value, password.value);
-        setCurrentUser(user)
+        await signInUserByEmailAndPassword(email.value, password.value);
       } catch (error) {
         auth_erros[error.code] ? swal(auth_erros[error.code].message, {...defaultAlert}) :
         console.log("Something wrong when user login: " + error);

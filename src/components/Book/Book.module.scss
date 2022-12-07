@@ -1,10 +1,10 @@
-@use '../../index.scss' as var;
+@use "../../index.scss" as var;
 
 .book__container {
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 4rem);
+  display: flex;
+  width: 100%;
+  height: 100%;
 
-    color: var.$very-dark;
-    padding: 2rem;
+  color: var.$very-dark;
+  padding: 2rem;
 }

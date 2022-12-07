@@ -7,12 +7,7 @@ import { signOutUser } from '../../../utils/firebase/firebase';
 import Dropbox from '../Dropbox/Dropbox';
 
 const Header = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  }
+  const { currentUser } = useContext(UserContext);
 
   return (
     <div className={styles.header}>
@@ -20,15 +15,15 @@ const Header = () => {
         <nav className={styles.header__nav}>
             <NavLink end to="/"> Início </NavLink>
             <Dropbox />
+            {/* {currentUser && <img src={currentUser.photoURL} alt='user photo'></img>} */}
+
             {currentUser ? 
-            <NavLink to="/" className={styles.box} onClick={signOutHandler} >Deslogar</NavLink> :
+            <span className={styles.box} onClick={signOutUser} >Deslogar</span> :
             <div>
               <NavLink to="/login" className={styles.box}>Fazer login</NavLink>
               <NavLink to="/signup" className={styles.box}>Cadastrar-se</NavLink>
             </div>
             }
-            {/* { <NavLink to="/signup" className={styles.box}>Cadastrar-se</NavLink> }
-            { <NavLink to="/login" className={styles.box}>Fazer login</NavLink> }    */}
         </nav>
     </div>
   )

@@ -23,7 +23,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: .125rem;
+    margin-bottom: 0.125rem;
 
     > * {
       margin-right: 2rem;
@@ -36,31 +36,29 @@
     display: flex;
     align-items: center;
 
-    margin-bottom: 3rem;
-
     span {
       cursor: pointer;
-      padding-left: .0625rem;
+      padding-left: 0.0625rem;
     }
 
     h3 {
+      max-width: 18rem;
       margin-left: 0.8rem;
       line-height: 1.2rem;
 
-      font-size: .95rem;
-      padding-bottom: .125rem;
+      font-size: 0.95rem;
+      padding-bottom: 0.125rem;
 
       a {
         color: var.$link;
         text-decoration: underline;
         cursor: pointer;
-  
+
         &:hover {
           color: var.$purple;
         }
       }
     }
-
   }
 
   .registration__footer {
@@ -71,10 +69,10 @@
 
 .swal {
   background-color: var.$dark-color;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, .5);
-  
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+
   > * {
-      font-size: 1.25rem;
-      color: var.$white;
+    font-size: 1.25rem;
+    color: var.$white;
   }
 }

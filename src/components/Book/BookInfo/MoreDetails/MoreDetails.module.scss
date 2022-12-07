@@ -1,30 +1,29 @@
-@use '../../../../index.scss' as var;
+@use "../../../../index.scss" as var;
 
 .moredetails__container {
-    width: 100%;
-    background-color: var.$very-dark;
+  width: 100%;
+  background-color: var.$very-dark;
+  color: var.$white;
+  border-radius: 8px;
+
+  margin-bottom: 3.5rem;
+  padding: 2rem;
+
+  .moredetails__topic {
     color: var.$white;
-    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: 1.75rem;
+  }
 
-    margin-bottom: 3.5rem;
-    padding: 2rem;
+  h4 {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: var.$orange;
 
-    .moredetails__topic {
-        color: var.$white;
-        font-weight: 600;
-        font-size: 1.125rem;
-        margin-bottom: 1.75rem;
+    .moredetails__metadata {
+      color: rgba(var.$white, 0.8);
+      margin-right: 0.25rem;
     }
-
-    h4 {
-        margin-bottom: .75rem;
-        font-size: .9rem;
-        color: var.$orange;
-
-        .moredetails__metadata {
-            color: rgba(var.$white, .8);
-            margin-right: .25rem;
-        }
-    }
-
+  }
 }
