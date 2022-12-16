@@ -1,22 +1,22 @@
-@use '../../index.scss' as var;
+@use "../../index.scss" as var;
 
 .categories_container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 42.125rem;
+  width: 100%;
+
+  > h2 {
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .categories {
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 42.125rem;
-    padding-bottom: 1.5rem;
-    
-    > h2 {
-        margin-bottom: 14px;
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
+    flex-wrap: wrap;
 
-    .categories {
-        display: flex;
-        flex-wrap: wrap;
-
-        max-width: 42.125rem;
-    }
+    width: 100%;
+  }
 }
