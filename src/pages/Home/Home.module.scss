@@ -1,17 +1,16 @@
 @use "../../index.scss" as var;
 
-#home__page {
-  position: relative;
-  min-height: 100vh;
-  width: 100vw;
+.home_page {
+  min-height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .home_body {
+    padding: 3rem 2rem;
 
-  overflow: hidden;
-  padding-bottom: 2.5rem;
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .search {
     display: flex;
     align-items: center;
@@ -24,8 +23,8 @@
       color: rgba(var.$dark-color, 0.8);
     }
 
-    #search__input {
-      width: 30rem;
+    .search__input {
+      // width: 30rem;
       height: 2.5rem;
       padding: 0 2.5rem;
 
@@ -35,7 +34,7 @@
       border: var.$dark-color 1.5px solid;
 
       &::placeholder {
-        color: rgba(var.$very-dark, .6);
+        color: rgba(var.$very-dark, 0.6);
       }
     }
   }
@@ -48,15 +47,20 @@
 
     position: relative;
     text-align: center;
-    
+
     outline: 0;
     border: 0;
     color: var.$very-dark;
-    opacity: .7;
+    opacity: 0.7;
 
     &:before {
       content: "";
-      background: linear-gradient(to right, transparent, var.$very-dark, transparent);
+      background: linear-gradient(
+        to right,
+        transparent,
+        var.$very-dark,
+        transparent
+      );
       position: absolute;
       left: 0;
       top: 50%;

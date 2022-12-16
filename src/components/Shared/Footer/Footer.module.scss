@@ -1,29 +1,24 @@
-@use '../../../index.scss' as var;
+@use "../../../index.scss" as var;
 
 .footer {
-    height: 54px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  min-height: 54px;
+  width: 100%;
+  position: relative;
+  padding: 2rem 1rem;
 
-    
-    background-color: var.$very-dark;
-    
-    .footer__nav {
-        display: flex;
-        color: var.$white;
-        
-        .footer__link {
-            margin: 0 2rem;
-            font-size: .925rem;
-            cursor: pointer;
-            color: var.$white;
-            text-decoration: none;
-        }
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  background-color: var.$very-dark;
+  color: var.$white;
+
+  .footer__link {
+    font-size: 0.925rem;
+    cursor: pointer;
+    color: var.$white;
+    text-decoration: none;
+  }
 }

@@ -1,57 +1,60 @@
-@use '../../../index.scss' as var;
+@use "../../../index.scss" as var;
 
 .header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 2.5rem;
+  width: 100%;
+  padding: 2rem;
+
+  background-color: var.$very-dark;
+
+  .header__logo {
+    color: var.$orange;
+    font-family: "Sora";
+    text-decoration: none;
+  }
+
+  .header__nav {
+    display: none;
     align-items: center;
 
-    height: 2.5rem;
-    width: 100vw;
-    padding: 2rem 2.5rem;
+    > * {
+      max-height: 2.125rem;
+      color: var.$white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
 
-    background-color: var.$very-dark;
-
-    .header__home {
-        color: var.$white;
-        font-family: 'Sora';
-        text-decoration: none;
+      &:hover {
+        color: var.$orange;
+      }
     }
-    
-    .header__nav {
-        display: flex;
-        align-items: center;
 
-        > * {
-            max-height: 2.125rem;
-            color: var.$white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
+    div:has(a) {
+      padding: 0;
+    }
 
-            &:hover {
-                color: var.$orange;
-            }
-        }
+    .box {
+      margin: 0 0.75rem;
+      border: 0.1px var.$white solid;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.4s;
 
-        div:has(a) {
-            padding: 0;
-        }
+      color: var.$white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
 
-        .box {
-            margin: 0 .75rem;
-            border: 0.1px var.$white solid;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all .4s;
+      &:hover {
+        color: var.$very-dark;
+        background-color: var.$white;
+      }
+    }
+  }
 
-            color: var.$white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            
-            &:hover {
-                color: var.$very-dark;
-                background-color: var.$white;
-            }
-        }
-    } 
+  .header_menu {
+    color: var.$white;
+  }
 }
-
