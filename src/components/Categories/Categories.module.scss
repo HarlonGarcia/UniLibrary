@@ -1,4 +1,5 @@
 @use "../../index.scss" as var;
+@use "../../styles/breakpoints.scss" as *;
 
 .categories_container {
   display: flex;
@@ -18,5 +19,9 @@
     flex-wrap: wrap;
 
     width: 100%;
+  }
+
+  @include sm {
+    margin-bottom: 2rem;
   }
 }

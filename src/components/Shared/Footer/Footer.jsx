@@ -5,12 +5,6 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <NavLink to="/sobre" className={styles.footer__link}>
-        Quem somos
-      </NavLink>
-      <NavLink to="/contact" className={styles.footer__link}>
-        Fale conosco
-      </NavLink>
       <NavLink to="/support" className={styles.footer__link}>
         Ajuda e suporte
       </NavLink>

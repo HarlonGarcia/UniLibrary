@@ -1,6 +1,7 @@
 @use "../../index.scss" as var;
 
 .home_page {
+  position: relative;
   min-height: 100%;
 
   .home_body {
@@ -40,7 +41,7 @@
   }
 
   .line {
-    width: 100vw;
+    width: 100%;
     line-height: 1em;
     height: 1.5em;
     margin-bottom: 2rem;

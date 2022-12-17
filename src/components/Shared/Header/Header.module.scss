@@ -1,4 +1,5 @@
 @use "../../../index.scss" as var;
+@use "../../../styles/breakpoints.scss" as *;
 
 .header {
   display: flex;
@@ -56,5 +57,15 @@
 
   .header_menu {
     color: var.$white;
+  }
+
+  @include sm {
+    .header__nav {
+      display: flex;
+    }
+
+    .header_menu {
+      display: none;
+    }
   }
 }

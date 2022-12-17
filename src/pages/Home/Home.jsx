@@ -78,7 +78,7 @@ const Home = () => {
             onKeyDown={searchBook}
           />
         </div>
-        {!books && !load && <Categories style={{ marginBottom: "1rem" }} />}
+        {!books && !load && <Categories />}
         {books && (
           <hr className={styles.line} data-content="Resultados da pesquisa" />
         )}

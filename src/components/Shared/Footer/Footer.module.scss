@@ -1,12 +1,14 @@
 @use "../../../index.scss" as var;
+@use "../../../styles/breakpoints.scss" as *;
 
 .footer {
-  min-height: 54px;
   width: 100%;
-  position: relative;
-  padding: 2rem 1rem;
+  position: fixed;
+  bottom: 0;
+  padding: 1.25rem 1rem;
+  z-index: 40;
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -20,5 +22,18 @@
     cursor: pointer;
     color: var.$white;
     text-decoration: none;
+  }
+
+  @include sm {
+    display: flex;
+    gap: 2rem;
+  }
+
+  @include md {
+    gap: 3rem;
+  }
+
+  @include lg {
+    gap: 3.5rem;
   }
 }
