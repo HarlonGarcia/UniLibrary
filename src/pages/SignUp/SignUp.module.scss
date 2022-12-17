@@ -1,34 +1,32 @@
 .registration__container {
-    width: 100vw;
-    max-height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
 
-    .registration {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    
-        overflow: hidden;
-    
-        .remaining_signup {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    }
-    
-    .registration__image__cotainer {
-        height: calc(100vh - 4rem);
-        overflow: hidden;
-    }
+  .registration {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    .image {
-        width: 900px;
-        object-fit: cover;
-        height: 100%;
-        filter: brightness(.1) grayscale(1);
+    overflow: hidden;
+
+    .remaining_signup {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
+  }
+
+  .registration__image__cotainer {
+    height: calc(100vh - 6.5rem);
+    overflow: hidden;
+  }
+
+  .image {
+    width: 900px;
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.1) grayscale(1);
+  }
 }
-
-

@@ -59,7 +59,7 @@
     color: var.$white;
   }
 
-  @include sm {
+  @include md {
     .header__nav {
       display: flex;
     }
