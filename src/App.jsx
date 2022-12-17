@@ -6,9 +6,9 @@ import Header from "./components/Shared/Header/Header";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
-import HelpAndSupport from "./components/HelpAndSupport/HelpAndSupport";
 import Book from "./components/Book/Book";
 import Footer from "./components/Shared/Footer/Footer";
+import HelpAndSupport from "./pages/HelpAndSupport/HelpAndSupport";
 
 const App = () => {
   return (
