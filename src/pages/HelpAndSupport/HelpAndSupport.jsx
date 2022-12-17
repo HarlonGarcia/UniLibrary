@@ -22,6 +22,7 @@ const HelpAndSupport = () => {
           </a>
         </p>
         <button>
+          <span>Ver github</span>
           <a
             href="https://github.com/HarlonGarcia/UniLibrary"
             target="_blank"
@@ -44,6 +45,22 @@ const HelpAndSupport = () => {
               <p>
                 Os livros fazem parte de uma biblioteca do google, então não são
                 do nosso controle, porém alguns livros tem amostra grátis!
+              </p>
+            </div>
+            <div>
+              <h3>Como posso contribuir com o projeto?</h3>
+              <p>
+                O UniLibrary é um projeto pessoal que aceita contribuições da
+                comunidade, você pode conferir no github como fazer uma
+                contribuição
+              </p>
+            </div>
+            <div>
+              <h3>Como posso contribuir com o projeto?</h3>
+              <p>
+                O UniLibrary é um projeto pessoal que aceita contribuições da
+                comunidade, você pode conferir no github como fazer uma
+                contribuição
               </p>
             </div>
             <div>
