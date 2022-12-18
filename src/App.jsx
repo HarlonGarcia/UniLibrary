@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LayoutGroup } from "framer-motion";
 
-import Header from "./components/Shared/Header/Header";
+import Header from "./components/Header/Header";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import Book from "./components/Book/Book";
-import Footer from "./components/Shared/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import HelpAndSupport from "./pages/HelpAndSupport/HelpAndSupport";
 
 const App = () => {

@@ -1,14 +1,19 @@
 import React from "react";
 import styles from "./HelpAndSupport.module.scss";
 import { VscGithub } from "react-icons/vsc";
+import { motion } from "framer-motion";
 
 // TODO implement api to send all messages to database
 // TODO create faq array and show faq by array.map
-// TODO make it responsive
 
 const HelpAndSupport = () => {
   return (
-    <div className={styles.support_container}>
+    <motion.div
+      className={styles.support_container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className={styles.support_header}>
         <p>
           Este site é um projeto open-source e foi feito para fins educacionais.
@@ -74,7 +79,7 @@ const HelpAndSupport = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

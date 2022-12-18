@@ -1,5 +1,5 @@
-@use "../../../index.scss" as var;
-@use "../../../styles/breakpoints.scss" as *;
+@use "../../index.scss" as var;
+@use "../../styles/breakpoints.scss" as *;
 
 .footer {
   width: 100%;
@@ -25,11 +25,11 @@
   }
 
   @include sm {
-    display: flex;
     gap: 2rem;
   }
 
   @include md {
+    display: flex;
     gap: 3rem;
   }
 

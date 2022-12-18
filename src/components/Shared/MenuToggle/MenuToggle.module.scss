@@ -1,0 +1,11 @@
+.menu {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.menu,
+.menu > * {
+  z-index: 50;
+}

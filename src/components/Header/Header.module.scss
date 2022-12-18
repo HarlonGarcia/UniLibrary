@@ -1,5 +1,5 @@
-@use "../../../index.scss" as var;
-@use "../../../styles/breakpoints.scss" as *;
+@use "../../index.scss" as var;
+@use "../../styles/breakpoints.scss" as *;
 
 .header {
   display: flex;
@@ -10,6 +10,7 @@
   width: 100%;
   padding: 2rem;
 
+  z-index: 10;
   background-color: var.$very-dark;
 
   .header__logo {
@@ -57,6 +58,7 @@
 
   .header_menu {
     color: var.$white;
+    z-index: 20;
   }
 
   @include md {

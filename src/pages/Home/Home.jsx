@@ -7,7 +7,6 @@ import axios from "axios";
 import Books from "../../components/Books/Books";
 import Banner from "../../components/Shared/Banner/Banner";
 import Categories from "../../components/Categories/Categories";
-import Footer from "../../components/Shared/Footer/Footer";
 import Pagination from "../../components/Shared/Pagination/Pagination";
 import Loading from "../../components/Shared/SvgComponents/Loading/Loading";
 
