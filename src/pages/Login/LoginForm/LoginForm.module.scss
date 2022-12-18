@@ -1,18 +1,19 @@
 @use "../../../index.scss" as var;
+@use "../../../styles/breakpoints.scss" as *;
 
 .login__form {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 24em;
-  padding: 1rem 1.5rem;
+  width: 100%;
+  padding: 1rem;
 
   h1 {
     color: var.$dark-color;
     font-size: 2rem;
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
 
     font-family: "Sora", sans-serif;
   }
@@ -22,16 +23,30 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2.5rem;
   }
 
-  #login__divisor {
+  .login_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 14rem;
+    color: var.$white;
+    background-color: var.$dark-color;
+
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .login_divisor {
     display: flex;
     flex-direction: row;
     align-items: center;
 
     font-weight: 600;
-    color: var.$dark-color;
+    color: rgba(var.$dark-color, 0.6);
 
     margin-bottom: 20px;
 
@@ -47,20 +62,19 @@
     display: flex;
     align-items: center;
 
-    cursor: pointer;
+    background: rgba(var.$dark-color, 0.05);
+
     margin-bottom: 16px;
     padding: 0.25rem 0.75rem;
-    border-radius: 0;
-    transition: 0.3s ease-out;
-    background: transparent;
-    border-radius: 0px;
-    border: none;
 
-    &:hover {
-      color: var.$link;
-    }
+    border-radius: 4px;
+    border: 1px solid rgba(var.$dark-color, 0.4);
+
+    transition: 0.3s ease-out;
+    cursor: pointer;
 
     h3 {
+      color: rgba(var.$very-dark, 0.8);
       font-size: 1rem;
       font-weight: 600;
       padding: 10px;
@@ -72,6 +86,7 @@
     padding: 10px;
 
     a {
+      text-decoration: none;
       font-weight: 600;
       color: var.$link;
 
@@ -79,6 +94,10 @@
         color: var.$purple;
       }
     }
+  }
+
+  @include sm {
+    width: 30em;
   }
 }
 

@@ -54,7 +54,7 @@ const LoginForm = () => {
 
   return (
     <form className={styles.login__form} onSubmit={handleSubmit}>
-      <h1>UniLibrary •</h1>
+      <h1>UniLibrary</h1>
       <div className={styles.login__inputs}>
         <Input
           fieldstyle={{ width: "100%" }}
@@ -76,8 +76,12 @@ const LoginForm = () => {
           {...password}
         />
       </div>
-      <ButtonForm type="submit" label="Entrar"></ButtonForm>
-      <div id={styles.login__divisor}>
+
+      <button className={styles.login_button} type="submit">
+        Entrar
+      </button>
+
+      <div className={styles.login_divisor}>
         <hr />
         <div> OU </div>
         <hr />

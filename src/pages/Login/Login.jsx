@@ -9,20 +9,9 @@ const Login = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={styles.login__container}
+      className={styles.login_container}
     >
-      <div className={styles.login}>
-        <div className={styles.login__image__cotainer}>
-          <img
-            src="src/assets/images/library.png"
-            alt="Library Image"
-            className={styles.image}
-          />
-        </div>
-        <div className={styles.remaining}>
-          <LoginForm></LoginForm>
-        </div>
-      </div>
+      <LoginForm></LoginForm>
     </motion.div>
   );
 };
